@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Concepts | De La Noval, P.A.</title>
+<meta name="description" content="Four homepage design concepts for the De La Noval, P.A. website.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap">
+<style>
+  :root{--navy:#051b34;--royal:#3957ff;--ice:#f5f7ff;--slate:#3b4855;--line:#dde3f0;--muted:#5c6878}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ice);color:var(--navy);font:400 17px/1.6 'Rubik',system-ui,sans-serif}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit}
+  a:focus-visible{outline:3px solid var(--royal);outline-offset:4px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,40px)}
+  header{padding:40px 0 8px}
+  header img{width:120px}
+  .intro{padding:40px 0 48px;max-width:760px}
+  .intro .eyebrow{font:600 13px/1 'Rubik',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--royal)}
+  h1{font-size:clamp(36px,4.4vw,56px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px;font-weight:600}
+  .intro p{margin:0 0 12px;color:var(--slate)}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;padding-bottom:56px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(5,27,52,.12)}
+  .card img{aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+  .card .body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card .num{font:600 13px/1 'Rubik',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .card h2{margin:0;font-size:26px;font-weight:600;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--slate);flex:1}
+  .card .go{margin-top:10px;font-weight:600;color:var(--royal)}
+  @media (max-width:820px){.grid{grid-template-columns:1fr}}
+  .shared{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,40px);margin-bottom:56px}
+  .shared h2{margin:0 0 16px;font-size:22px;font-weight:600}
+  .shared ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px}
+  .shared li{display:flex;gap:12px;align-items:flex-start;color:var(--slate)}
+  .shared li svg{flex:none;color:var(--royal);margin-top:3px}
+  @media (max-width:700px){.shared ul{grid-template-columns:1fr}}
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="assets/img/logo-blue.png" alt="De La Noval, P.A." width="312" height="156"></header>
+
+  <section class="intro">
+    <div class="eyebrow">Homepage concepts · October 2026</div>
+    <h1>Four directions for the new delanovalpa.com</h1>
+    <p>Each concept keeps the firm's logo and colors and uses your real attorneys, client reviews and contact details. They differ in tone, from quiet and traditional to built to bring in calls.</p>
+    <p>Open each one on your computer and your phone. Pick the one you like most, or mix pieces from several. Forms and links are for demonstration only.</p>
+  </section>
+
+  <div class="grid">
+    <a class="card" href="counsel/">
+      <img src="assets/img/thumbs/counsel.webp" alt="Preview of Concept 1, Counsel" width="960" height="600">
+      <div class="body">
+        <div class="num">Concept 1</div>
+        <h2>Counsel</h2>
+        <p>Quiet, traditional and official. Clean white space, all-caps headings and both partners front and center.</p>
+        <span class="go">Open concept &rarr;</span>
+      </div>
+    </a>
+    <a class="card" href="editorial/">
+      <img src="assets/img/thumbs/editorial.webp" alt="Preview of Concept 2, Editorial" width="960" height="600">
+      <div class="body">
+        <div class="num">Concept 2</div>
+        <h2>Editorial</h2>
+        <p>Elegant and modern. A classic serif that matches the DN logo, with angled shapes taken from the logo's diagonal stroke.</p>
+        <span class="go">Open concept &rarr;</span>
+      </div>
+    </a>
+    <a class="card" href="other-side/">
+      <img src="assets/img/thumbs/other-side.webp" alt="Preview of Concept 3, The Other Side" width="960" height="600">
+      <div class="body">
+        <div class="num">Concept 3</div>
+        <h2>The Other Side</h2>
+        <p>Dark and confident. Built around the firm's strongest story, with a 30-second claim check for insurance cases.</p>
+        <span class="go">Open concept &rarr;</span>
+      </div>
+    </a>
+    <a class="card" href="advocate/">
+      <img src="assets/img/thumbs/advocate.webp" alt="Preview of Concept 4, Advocate" width="960" height="600">
+      <div class="body">
+        <div class="num">Concept 4</div>
+        <h2>Advocate</h2>
+        <p>Designed to turn visitors into calls. Case review form up top, case types, reviews, FAQ and a working English/Spanish switch.</p>
+        <span class="go">Open concept &rarr;</span>
+      </div>
+    </a>
+  </div>
+
+  <section class="shared" aria-labelledby="shared-title">
+    <h2 id="shared-title">Included in every concept</h2>
+    <ul>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>A chat assistant that answers visitors in English or Spanish and captures their details, day or night</li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Click-to-call phone number and a consultation request form</li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Designed for phones first, where most people search for a lawyer</li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Fast loading, accessible and built with search engines in mind</li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Your real client reviews, with room to pull in Google reviews</li>
+      <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Attorney advertising disclaimers included</li>
+    </ul>
+  </section>
+
+  <footer>Prepared for De La Noval, P.A. by Mario Miralles. These are design concepts, not the live website.</footer>
+</div>
+</body>
+</html>
