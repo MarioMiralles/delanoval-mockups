@@ -4,187 +4,206 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Concept 4 · Advocate | De La Noval, P.A.</title>
-<meta name="description" content="Injured, or your insurance claim denied? De La Noval, P.A. in Doral, Florida takes on the insurance company. Free consultation. Se habla español.">
+<meta name="description" content="Injured, or your insurance claim denied? De La Noval, P.A. in Doral, Florida takes on the insurance company. Se habla español.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Rubik:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="../assets/motion.css">
+<script src="../assets/motion.js"></script>
 <style>
   :root{
-    --navy:#051b34; --deep:#03101f; --royal:#3957ff; --royal-dark:#2440e0; --ice:#f5f7ff; --slate:#3b4855;
-    --line:#dde3f0; --muted:#5c6878; --white:#fff;
-    --sans:'Rubik',system-ui,sans-serif;
-    --wrap:1240px; --gut:clamp(16px,3vw,40px); --r:14px;
+    --navy:#051b34; --deep:#03101f; --royal:#3957ff; --royal-tint:#8da0ff; --ice:#f5f7ff; --slate:#3b4855;
+    --line:#dde3f0; --line-dark:rgba(245,247,255,.16); --muted:#5c6878;
+    --display:'Marcellus','Trajan Pro',Georgia,serif; --sans:'Rubik',system-ui,sans-serif;
+    --wrap:1280px; --gut:clamp(20px,4vw,56px);
   }
   *{box-sizing:border-box}
-  body{margin:0;background:#fff;color:var(--navy);font:400 17px/1.6 var(--sans)}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#fff;color:var(--navy);font:300 18px/1.7 var(--sans)}
   img{max-width:100%;height:auto;display:block}
   a{color:inherit}
-  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--royal);outline-offset:3px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--royal);outline-offset:4px}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
-  h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.02em;font-weight:600}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--royal)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;border:0;background:var(--royal);color:#fff;font:600 16px/1 var(--sans);text-decoration:none;cursor:pointer}
-  .btn:hover{background:var(--royal-dark)}
-  .btn-outline{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
-  .btn-outline:hover{background:var(--navy);color:#fff}
-  section.block{padding:clamp(64px,8vw,104px) 0}
-  .sec-head{max-width:720px;margin-bottom:40px}
-  .sec-head h2{font-size:clamp(32px,3.6vw,48px);margin:14px 0 12px}
+  h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.08;letter-spacing:.005em}
+  .eyebrow{font:400 12px/1.4 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--royal)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 32px;border:1px solid var(--navy);background:var(--navy);color:#fff;font:400 13px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .5s var(--ease-out),border-color .5s var(--ease-out),color .5s var(--ease-out)}
+  .btn:hover{background:var(--royal);border-color:var(--royal)}
+  .btn-royal{background:var(--royal);border-color:var(--royal)}
+  .btn-royal:hover{background:var(--navy);border-color:var(--navy)}
+  .btn-line{background:transparent;color:inherit;border-color:currentColor}
+  .btn-line:hover{background:#fff;color:var(--navy);border-color:#fff}
+  section.block{padding:clamp(88px,10vw,136px) 0}
+  .sec-head{max-width:760px;margin-bottom:clamp(44px,5vw,64px)}
+  .sec-head h2{font-size:clamp(38px,4.2vw,62px);margin:18px 0 16px}
   .sec-head p{margin:0;color:var(--slate)}
   .center{text-align:center;margin-left:auto;margin-right:auto}
 
   /* Top strip */
-  .strip{background:var(--navy);color:#dfe5f2;font:400 14px/1 var(--sans)}
-  .strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:42px}
-  .strip b{color:#fff;font-weight:500}
-  .strip a{color:#fff;text-decoration:none;font-weight:500}
+  .strip{background:var(--deep);color:#c9d2e6;font:300 13px/1 var(--sans);letter-spacing:.06em}
+  .strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:40px}
+  .strip a{color:#fff;text-decoration:none}
 
   /* Header */
-  header.site{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
-  header.site .wrap{display:flex;align-items:center;gap:24px;min-height:88px}
-  .logo img{width:112px}
-  nav.main{display:flex;gap:clamp(14px,2vw,30px);margin-left:auto}
-  nav.main a{font:500 16px/1 var(--sans);text-decoration:none;padding:12px 0;display:inline-flex;align-items:center;gap:6px}
-  nav.main a:hover{color:var(--royal)}
-  .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px}
-  .seg button{min-width:44px;min-height:38px;border:0;border-radius:999px;background:transparent;font:600 13px var(--sans);color:var(--muted);cursor:pointer}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);transition:box-shadow .6s var(--ease-out)}
+  header.site.is-scrolled{box-shadow:0 10px 30px rgba(5,27,52,.06)}
+  header.site .wrap{display:flex;align-items:center;gap:28px;min-height:92px;transition:min-height .6s var(--ease-out)}
+  header.site.is-scrolled .wrap{min-height:76px}
+  .logo img{width:116px}
+  nav.main{display:flex;gap:clamp(16px,2.2vw,34px);margin-left:auto}
+  nav.main a{font:400 15px/1 var(--sans);text-decoration:none;padding:12px 0}
+  .seg{display:inline-flex;border:1px solid var(--line)}
+  .seg button{min-width:46px;min-height:40px;border:0;background:transparent;font:400 12px var(--sans);letter-spacing:.16em;color:var(--muted);cursor:pointer;transition:background .4s,color .4s}
   .seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
-  .call{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border-radius:999px;background:var(--royal);color:#fff;text-decoration:none;font:600 16px/1 var(--sans)}
-  .call:hover{background:var(--royal-dark)}
-  .menu-btn{display:none;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:#fff;font:500 15px var(--sans);color:var(--navy)}
-  @media (max-width:1120px){
-    nav.main{display:none;position:absolute;left:0;right:0;top:88px;background:#fff;flex-direction:column;gap:0;padding:8px var(--gut) 20px;border-bottom:1px solid var(--line);margin:0}
+  .call{display:inline-flex;align-items:center;gap:10px;font:400 16px/1 var(--sans);text-decoration:none;white-space:nowrap}
+  .call svg{color:var(--royal)}
+  header.site .btn{min-height:48px;padding:0 22px;font-size:12px}
+  .menu-btn{display:none;min-height:44px;padding:0 16px;border:1px solid var(--line);background:#fff;font:400 14px var(--sans);color:var(--navy);margin-left:auto;cursor:pointer}
+  @media (max-width:1180px){
+    nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;gap:0;padding:8px var(--gut) 20px;border-bottom:1px solid var(--line);margin:0}
     nav.main.open{display:flex}
     nav.main a{padding:16px 0;border-bottom:1px solid var(--line)}
-    .menu-btn{display:inline-flex;align-items:center;margin-left:auto}
+    .menu-btn{display:inline-flex;align-items:center}
+    header.site .btn{display:none}
   }
-  @media (max-width:640px){.call span{display:none}.call{padding:0 14px}.strip .hide-sm{display:none}}
+  @media (max-width:640px){.call span{display:none}.strip .hide-sm{display:none}header.site .wrap{gap:14px}}
 
   /* Hero */
-  .hero{background:var(--ice);overflow:hidden}
-  .hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,64px);padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(48px,6vw,88px);align-items:start}
-  .hero h1{font-size:clamp(38px,4.3vw,60px);margin:18px 0 20px;font-weight:700}
-  .hero h1 span{color:var(--royal)}
-  .hero .lede{font-size:clamp(18px,1.5vw,20px);color:var(--slate);max-width:600px;margin:0 0 28px}
-  .points{list-style:none;margin:0 0 32px;padding:0;display:grid;gap:12px}
-  .points li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
-  .points svg{flex:none;color:var(--royal);margin-top:2px}
-  .attys{display:flex;flex-wrap:wrap;gap:16px}
-  .atty{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 20px 6px 6px}
-  .atty img{width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:50% 12%}
-  .atty b{display:block;font-size:15px}
+  .hero{position:relative;background:var(--ice);overflow:hidden}
+  .hero .photo{position:absolute;top:0;bottom:0;right:0;width:46%}
+  .hero .photo img{width:100%;height:100%;object-fit:cover}
+  .hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,247,255,1) 0%,rgba(245,247,255,0) 22%),linear-gradient(0deg,rgba(5,27,52,.35),rgba(5,27,52,0) 50%)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,64px);padding-top:clamp(56px,6vw,96px);padding-bottom:clamp(64px,7vw,112px);align-items:center}
+  .hero h1{font-size:clamp(44px,5vw,78px);margin:24px 0 26px}
+  .hero h1 .accent{color:var(--royal)}
+  .hero .lede{font-size:clamp(18px,1.4vw,20px);color:var(--slate);max-width:580px;margin:0 0 30px}
+  .points{list-style:none;margin:0 0 36px;padding:0;display:grid;gap:12px}
+  .points li{display:flex;gap:14px;align-items:center;font-weight:400}
+  .points li::before{content:"";width:22px;height:1px;background:var(--royal);flex:none}
+  .attys{display:flex;flex-wrap:wrap;gap:28px}
+  .atty{display:flex;align-items:center;gap:14px}
+  .atty img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 12%;box-shadow:0 0 0 1px var(--line),0 0 0 5px #fff}
+  .atty b{display:block;font:400 18px/1.2 var(--display)}
   .atty span{font-size:14px;color:var(--muted)}
-  .intake{background:var(--navy);color:#fff;border-radius:var(--r);padding:clamp(24px,3vw,36px);box-shadow:0 30px 60px rgba(5,27,52,.25)}
-  .intake h2{font-size:clamp(24px,2.2vw,30px);margin-bottom:8px}
-  .intake p{margin:0 0 20px;color:#c9d2e6;font-size:16px}
-  .intake form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .intake label{display:grid;gap:6px;min-width:0;font:500 14px var(--sans);color:#dfe5f2}
+  .intake{position:relative;background:#fff;padding:clamp(28px,3vw,44px);box-shadow:0 40px 80px rgba(5,27,52,.18)}
+  .intake::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--royal)}
+  .intake h2{font-size:clamp(26px,2.4vw,34px);margin-bottom:8px}
+  .intake p{margin:0 0 24px;color:var(--slate);font-size:16px}
+  .intake form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
+  .intake label{display:grid;gap:6px;min-width:0;font:400 11px/1.2 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .intake .full{grid-column:1 / -1}
-  .intake input,.intake select,.intake textarea{min-height:48px;border:1px solid #23406a;background:#0a2647;color:#fff;border-radius:10px;padding:10px 12px;font:400 16px var(--sans);width:100%;min-width:0}
-  .intake textarea{min-height:92px;resize:vertical}
-  .intake .consent{grid-template-columns:none;display:flex;gap:10px;align-items:flex-start;font:400 13px/1.45 var(--sans);color:#a9b6cc}
-  .intake .consent input{min-height:0;width:20px;height:20px;margin-top:2px;flex:none}
-  .intake .btn{width:100%;min-height:56px}
-  .intake small{display:block;text-align:center;color:#a9b6cc;font-size:13px}
-  @media (max-width:980px){.hero .wrap{grid-template-columns:1fr}}
+  .intake input,.intake select,.intake textarea{width:100%;min-width:0;min-height:44px;border:0;border-bottom:1px solid #b8c2d6;background:transparent;color:var(--navy);padding:8px 0;font:300 16px var(--sans);border-radius:0;transition:border-color .4s}
+  .intake input:focus,.intake select:focus,.intake textarea:focus{outline:none;border-bottom-color:var(--royal)}
+  .intake textarea{min-height:72px;resize:vertical}
+  .intake .consent{display:flex;gap:10px;align-items:flex-start;font:300 13px/1.45 var(--sans);letter-spacing:0;text-transform:none;color:var(--muted)}
+  .intake .consent input{min-height:0;width:18px;height:18px;margin-top:2px;flex:none;border:0}
+  .intake .btn{width:100%}
+  .intake small{display:block;text-align:center;color:var(--muted);font-size:12px}
+  @media (max-width:980px){.hero .wrap{grid-template-columns:1fr}.hero .photo{position:relative;width:100%;height:280px}.hero .photo::after{background:linear-gradient(0deg,rgba(245,247,255,1) 0%,rgba(245,247,255,0) 40%)}}
   @media (max-width:480px){.intake form{grid-template-columns:1fr}}
 
-  /* Trust bar */
-  .trust{border-bottom:1px solid var(--line)}
-  .trust .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-  .trust div.t{display:flex;align-items:center;gap:14px;padding:24px 20px}
-  .trust div.t+div.t{border-left:1px solid var(--line)}
-  .trust svg{flex:none;color:var(--royal)}
-  .trust b{display:block;font-size:16px}
-  .trust span{font-size:14px;color:var(--muted)}
-  .ph{background:#fff4d6;color:#7a5600;border-radius:4px;padding:0 4px;font-weight:600}
-  @media (max-width:980px){.trust .wrap{grid-template-columns:1fr 1fr}.trust div.t:nth-child(3){border-left:0}.trust div.t:nth-child(n+3){border-top:1px solid var(--line)}}
-  @media (max-width:520px){.trust .wrap{grid-template-columns:1fr}.trust div.t+div.t{border-left:0;border-top:1px solid var(--line)}}
+  /* Figures */
+  .figures{border-bottom:1px solid var(--line)}
+  .figures .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .figures .f{padding:44px 28px 40px 0}
+  .figures .f+.f{padding-left:28px;border-left:1px solid var(--line)}
+  .figures .n{white-space:nowrap;font:400 clamp(34px,4vw,60px)/1 var(--display);margin-bottom:10px}
+  .figures .l{font-size:15px;color:var(--slate)}
+  @media (max-width:900px){.figures .wrap{grid-template-columns:1fr 1fr}.figures .f:nth-child(3){border-left:0;padding-left:0}.figures .f:nth-child(n+3){border-top:1px solid var(--line)}}
 
   /* Case types */
-  .groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-  .group{border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:18px}
-  .group .top{display:flex;align-items:center;gap:14px}
-  .group .ico{width:48px;height:48px;border-radius:12px;background:var(--ice);display:grid;place-items:center;color:var(--royal);flex:none}
-  .group h3{font-size:22px}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chips a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;background:var(--ice);text-decoration:none;font-size:15px;font-weight:500}
-  .chips a:hover{background:var(--navy);color:#fff}
+  .groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px)}
+  .group .ph{margin-bottom:28px}
+  .group .ph img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .group h3{font-size:clamp(26px,2.2vw,32px);margin-bottom:18px}
+  .group ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .group li a{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:16px;transition:color .4s,padding .5s var(--ease-out)}
+  .group li a:hover{color:var(--royal);padding-left:8px}
+  .group li svg{color:var(--royal);opacity:0;transition:opacity .4s}
+  .group li a:hover svg{opacity:1}
   @media (max-width:980px){.groups{grid-template-columns:1fr}}
 
   /* Steps */
   .steps-wrap{background:var(--navy);color:#fff}
   .steps-wrap .sec-head p{color:#c9d2e6}
-  .steps-wrap .eyebrow{color:#8da0ff}
-  .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:s}
-  .steps li{background:#0a2647;border-radius:var(--r);padding:30px;counter-increment:s}
-  .steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--royal);font:700 18px var(--sans);margin-bottom:20px}
-  .steps h3{font-size:22px;margin-bottom:10px}
+  .steps-wrap .eyebrow{color:var(--royal-tint)}
+  .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-dark)}
+  .steps li{padding:40px 36px 8px 0}
+  .steps li+li{padding-left:36px;border-left:1px solid var(--line-dark)}
+  .steps .num{font:400 64px/1 var(--display);color:var(--royal-tint);margin-bottom:24px}
+  .steps h3{font-size:26px;margin-bottom:12px}
   .steps p{margin:0;color:#c9d2e6;font-size:16px}
-  @media (max-width:900px){.steps{grid-template-columns:1fr}}
+  @media (max-width:900px){.steps{grid-template-columns:1fr}.steps li+li{border-left:0;padding-left:0;border-top:1px solid var(--line-dark)}}
 
   /* Why */
-  .why{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:center}
-  .why .photo{position:relative;border-radius:var(--r);overflow:hidden;background:#8a96a8}
-  .why .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%}
-  .why .photo .cap{position:absolute;left:16px;right:16px;bottom:16px;background:#fff;border-radius:10px;padding:14px 18px}
-  .why .photo .cap b{display:block}
+  .why{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,6vw,104px);align-items:center}
+  .why .photo{position:relative;background:#8a96a8}
+  .why .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 0}
+  .why .photo .cap{position:absolute;left:20px;right:20px;bottom:20px;background:#fff;padding:16px 20px}
+  .why .photo .cap b{display:block;font:400 19px/1.2 var(--display)}
   .why .photo .cap span{font-size:14px;color:var(--muted)}
-  .reasons{display:grid;grid-template-columns:1fr 1fr;gap:28px 32px;margin-top:8px}
-  .reasons h3{font-size:20px;margin-bottom:8px}
+  .reasons{display:grid;grid-template-columns:1fr 1fr;gap:36px 40px;margin-top:12px}
+  .reasons>div{padding-top:22px;border-top:1px solid var(--line)}
+  .reasons h3{font-size:23px;margin-bottom:10px}
   .reasons p{margin:0;color:var(--slate);font-size:16px}
-  @media (max-width:900px){.why{grid-template-columns:1fr}.why .photo{max-width:440px}}
+  @media (max-width:900px){.why{grid-template-columns:1fr}.why .photo{max-width:460px}}
   @media (max-width:560px){.reasons{grid-template-columns:1fr}}
 
   /* Results */
-  .results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-  .result{border:2px dashed #c8d0e2;border-radius:var(--r);padding:28px;background:#fff}
-  .result .amt{font:700 clamp(30px,3vw,40px)/1 var(--sans);color:var(--muted);margin-bottom:10px}
-  .result .type{font-weight:600;margin-bottom:6px}
+  .results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .result{border:1px dashed #b8c2d6;padding:32px;background:#fff}
+  .result .amt{font:400 clamp(30px,3vw,42px)/1 var(--display);color:var(--muted);margin-bottom:12px}
+  .result .type{font-weight:400;margin-bottom:6px}
   .result p{margin:0;color:var(--muted);font-size:15px}
-  .disclaim{margin-top:18px;font-size:13px;color:var(--muted)}
+  .disclaim{margin-top:20px;font-size:13px;color:var(--muted)}
+  .ph-note{background:#fff4d6;color:#7a5600;padding:0 4px;font-weight:400}
   @media (max-width:900px){.results{grid-template-columns:1fr}}
 
   /* Reviews */
   .reviews-wrap{background:var(--ice)}
-  .rating{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:32px;font-weight:500}
-  .stars{color:#f5a524;letter-spacing:2px}
-  .wall{columns:3 300px;column-gap:20px}
-  .wall figure{break-inside:avoid;margin:0 0 20px;background:#fff;border-radius:var(--r);padding:26px;border:1px solid var(--line)}
-  .wall blockquote{margin:0 0 16px;font-size:17px;line-height:1.55}
-  .wall figcaption{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
-  .wall figcaption i{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:600;font-size:13px}
+  .rating{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:40px;font-size:16px}
+  .stars{color:var(--royal);letter-spacing:3px}
+  .wall{columns:3 300px;column-gap:24px}
+  .wall figure{break-inside:avoid;margin:0 0 24px;background:#fff;padding:32px}
+  .wall blockquote{margin:0 0 20px;font:400 20px/1.5 var(--display)}
+  .wall figcaption{font:400 11px/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .wall .ask{background:var(--navy);color:#fff}
+  .wall .ask .btn{background:var(--royal);border-color:var(--royal);margin-top:6px}
 
   /* FAQ */
-  .faq{max-width:860px;margin:0 auto}
+  .faq{max-width:900px;margin:0 auto;border-top:1px solid var(--line)}
   .faq details{border-bottom:1px solid var(--line)}
-  .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;cursor:pointer;font:600 19px/1.35 var(--sans)}
+  .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;cursor:pointer;font:400 22px/1.35 var(--display)}
   .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;background:var(--ice);color:var(--royal);display:grid;place-items:center;font-size:22px;font-weight:500}
-  .faq details[open] summary::after{content:"\2212"}
-  .faq details p{margin:0 0 22px;color:var(--slate);max-width:760px}
+  .faq summary::after{content:"";flex:none;width:16px;height:16px;background:linear-gradient(var(--royal),var(--royal)) center/16px 1px no-repeat,linear-gradient(var(--royal),var(--royal)) center/1px 16px no-repeat;transition:transform .5s var(--ease-out)}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{margin:0 0 26px;color:var(--slate);max-width:780px}
 
   /* CTA band */
-  .band{background:var(--royal);color:#fff}
-  .band .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-top:56px;padding-bottom:56px}
-  .band h2{font-size:clamp(28px,3vw,40px)}
-  .band p{margin:8px 0 0;color:#e6eaff}
-  .band .acts{display:flex;flex-wrap:wrap;gap:12px}
-  .band .btn{background:#fff;color:var(--navy)}
-  .band .btn:hover{background:var(--ice)}
-  .band .btn-outline{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+  .band{position:relative;color:#fff;overflow:hidden;background:var(--deep)}
+  .band .bg{position:absolute;left:0;right:0;top:-12%;height:124%}
+  .band .bg img{width:100%;height:100%;object-fit:cover}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,16,31,.92) 0%,rgba(5,27,52,.6) 100%)}
+  .band .wrap{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;padding-top:clamp(96px,10vw,144px);padding-bottom:clamp(96px,10vw,144px)}
+  .band .eyebrow{color:var(--royal-tint)}
+  .band h2{font-size:clamp(40px,5vw,76px);margin:18px 0 14px}
+  .band p{margin:0;color:#dfe5f2;max-width:520px}
+  .band .acts{display:flex;flex-wrap:wrap;gap:14px}
+  .band .btn{background:#fff;color:var(--navy);border-color:#fff}
+  .band .btn:hover{background:var(--royal);color:#fff;border-color:var(--royal)}
 
   /* Footer */
   footer.site{background:var(--deep);color:#a9b6cc}
-  footer.site .wrap{padding-top:56px;padding-bottom:36px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr) minmax(0,2fr) minmax(0,3fr);gap:32px}
-  footer.site img.logo-f{width:112px;margin-bottom:18px}
-  footer.site h3{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px}
-  footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
-  footer.site a{color:#fff;text-decoration:none}
-  .map{border-radius:12px;min-height:170px;background:#0a2647;display:grid;place-items:center;text-align:center;padding:20px;color:#c9d2e6;font-size:14px;border:1px solid #1b3458}
-  .map svg{color:#8da0ff;margin:0 auto 8px}
-  footer.site .legal{grid-column:1 / -1;border-top:1px solid #1b2c44;padding-top:22px;font-size:13px}
+  footer.site .wrap{padding-top:64px;padding-bottom:36px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr) minmax(0,2fr) minmax(0,3fr);gap:36px}
+  footer.site img.logo-f{width:116px;margin-bottom:18px}
+  footer.site h3{font:400 12px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+  footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+  footer.site a{color:#fff}
+  .map{position:relative;background:#0a2647;border:1px solid #1b3458;overflow:hidden}
+  .map iframe{display:block;width:100%;height:230px;border:0;filter:grayscale(.3) contrast(1.05)}
+  .map .dir{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;font-size:14px;color:#c9d2e6}
+  .map .dir a{color:var(--royal-tint);white-space:nowrap}
+  footer.site .legal{grid-column:1 / -1;border-top:1px solid #1b2c44;padding-top:24px;font-size:13px}
   @media (max-width:980px){footer.site .wrap{grid-template-columns:1fr 1fr}}
   @media (max-width:560px){footer.site .wrap{grid-template-columns:1fr}}
 
@@ -195,52 +214,53 @@
 
 <div class="strip">
   <div class="wrap">
-    <span data-es="Consultas gratis · Se habla español"><b>Free consultations</b> · Se habla español</span>
-    <span class="hide-sm">Doral, Florida · <a href="tel:+17862578847">(786) 257-8847</a></span>
+    <span data-es="Se habla español · Doral, Florida">Se habla español · Doral, Florida</span>
+    <span class="hide-sm" data-es="Lunes a viernes, 8:30 AM a 5:00 PM">Monday to Friday, 8:30 AM to 5:00 PM</span>
   </div>
 </div>
 
-<header class="site">
+<header class="site" data-header>
   <div class="wrap">
     <a class="logo" href="#" aria-label="De La Noval, P.A. home"><img src="../assets/img/logo-blue.png" alt="De La Noval, P.A." width="312" height="156"></a>
     <nav class="main" id="nav" aria-label="Main">
-      <a href="#cases" data-es="Casos">Case types</a>
-      <a href="#how" data-es="Cómo funciona">How it works</a>
-      <a href="#why" data-es="Abogados">Attorneys</a>
-      <a href="#reviews" data-es="Reseñas">Reviews</a>
-      <a href="#faq" data-es="Preguntas">FAQ</a>
-      <a href="#contact" data-es="Contacto">Contact</a>
+      <a class="sweep" href="#cases" data-es="Casos">Case types</a>
+      <a class="sweep" href="#how" data-es="Cómo funciona">How it works</a>
+      <a class="sweep" href="#why" data-es="Abogados">Attorneys</a>
+      <a class="sweep" href="#reviews" data-es="Reseñas">Reviews</a>
+      <a class="sweep" href="#faq" data-es="Preguntas">FAQ</a>
     </nav>
     <div class="seg" role="group" aria-label="Language">
       <button type="button" aria-pressed="true" data-lang="en">EN</button>
       <button type="button" aria-pressed="false" data-lang="es">ES</button>
     </div>
-    <a class="call" href="tel:+17862578847"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>(786) 257-8847</span></a>
+    <a class="call" href="tel:+17862578847"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>(786) 257-8847</span></a>
+    <a class="btn btn-royal" href="#review" data-es="Revisión de su caso">Case review</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 
 <main>
   <section class="hero" aria-labelledby="hero-title">
+    <div class="photo kenburns" aria-hidden="true"><img src="../assets/img/stock/brickell-river.webp" alt="" width="1024" height="683" fetchpriority="high"></div>
     <div class="wrap">
       <div>
-        <div class="eyebrow" data-es="Abogados en Doral, Florida">Attorneys in Doral, Florida</div>
-        <h1 id="hero-title"><span data-es="¿Lesionado o le negaron su reclamo?">Injured, or your claim denied?</span><br><span class="plain" style="color:var(--navy)" data-es="Nosotros enfrentamos a la aseguradora.">We take on the insurance company.</span></h1>
-        <p class="lede" data-es="Uno de nuestros abogados defendía a compañías de seguros. La otra fue fiscal en Miami-Dade. Hoy usamos esa experiencia para usted.">One of our attorneys used to defend insurance companies. The other prosecuted cases in Miami-Dade. Today that experience works for you.</p>
-        <ul class="points">
-          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-es="Consulta gratis y sin compromiso">Free, no-obligation consultation</span></li>
-          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span data-es="Hable directamente con un abogado">Speak directly with an attorney</span></li>
-          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Hablamos español</span></li>
+        <div class="eyebrow" data-load style="--d:150ms" data-es="Abogados en Doral, Florida">Attorneys in Doral, Florida</div>
+        <h1 id="hero-title"><span class="line"><span style="--d:250ms" data-es="¿Lesionado o le negaron">Injured, or your</span></span><span class="line"><span style="--d:370ms" data-es="su reclamo?">claim denied?</span></span><span class="line"><span class="accent" style="--d:490ms" data-es="Enfrentamos a la aseguradora.">We take on the insurer.</span></span></h1>
+        <p class="lede" data-load style="--d:750ms" data-es="Uno de nuestros abogados defendía a compañías de seguros. La otra fue fiscal en Miami-Dade. Hoy usamos esa experiencia para usted.">One of our attorneys used to defend insurance companies. The other prosecuted cases in Miami-Dade. Today that experience works for you.</p>
+        <ul class="points" data-load style="--d:880ms">
+          <li data-es="Consulta sin compromiso">No-obligation consultation</li>
+          <li data-es="Hable directamente con un abogado">Speak directly with an attorney</li>
+          <li>Hablamos español</li>
         </ul>
-        <div class="attys">
-          <div class="atty"><img src="../assets/img/lazaro-seated.webp" alt="" width="800" height="1000" fetchpriority="high"><div><b>Lazaro De La Noval</b><span data-es="Ex abogado de aseguradoras">Former insurance defense attorney</span></div></div>
+        <div class="attys" data-load style="--d:1000ms">
+          <div class="atty"><img src="../assets/img/lazaro-seated.webp" alt="" width="800" height="1000"><div><b>Lazaro De La Noval</b><span data-es="Ex abogado de aseguradoras">Former insurance defense attorney</span></div></div>
           <div class="atty"><img src="../assets/img/elizabeth-seated.webp" alt="" width="800" height="1000"><div><b>Elizabeth Diaz Fernandez</b><span data-es="Ex fiscal de Miami-Dade">Former Miami-Dade prosecutor</span></div></div>
         </div>
       </div>
-      <div class="intake" id="contact">
-        <h2 data-es="Revisión gratis de su caso">Get a free case review</h2>
+      <div class="intake" id="review" data-load style="--d:600ms">
+        <h2 data-es="Revisión de su caso">Request a case review</h2>
         <p data-es="Cuéntenos qué pasó. Un abogado revisará su información.">Tell us what happened. An attorney will review your information.</p>
-        <form onsubmit="return false" aria-label="Free case review">
+        <form onsubmit="return false" aria-label="Request a case review">
           <label><span data-es="Nombre">First name</span><input type="text" autocomplete="given-name"></label>
           <label><span data-es="Apellido">Last name</span><input type="text" autocomplete="family-name"></label>
           <label><span data-es="Teléfono">Phone</span><input type="tel" autocomplete="tel"></label>
@@ -258,41 +278,59 @@
           </label>
           <label class="full"><span data-es="¿Qué pasó?">What happened?</span><textarea></textarea></label>
           <label class="consent full"><input type="checkbox"><span data-es="Acepto recibir llamadas y mensajes de texto sobre mi caso. Pueden aplicar tarifas.">I agree to receive calls and text messages about my case. Message and data rates may apply.</span></label>
-          <div class="full"><button class="btn" type="submit" data-es="Enviar mi caso">Get my free case review</button></div>
+          <div class="full"><button class="btn btn-royal" type="submit" data-es="Enviar mi caso">Request my case review</button></div>
           <small class="full" data-es="Enviar este formulario no crea una relación abogado-cliente.">Sending this form does not create an attorney-client relationship.</small>
         </form>
       </div>
     </div>
   </section>
 
-  <section class="trust" aria-label="Why people call us">
+  <section class="figures" aria-label="The firm in numbers">
     <div class="wrap">
-      <div class="t"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><div><b><span class="ph">[4.9]</span> on Google</b><span><span class="ph">[XX]</span> client reviews</span></div></div>
-      <div class="t"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg><div><b>Since 2016</b><span>in insurance disputes</span></div></div>
-      <div class="t"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><div><b>State &amp; federal</b><span>Admitted in Florida and S.D. Fla.</span></div></div>
-      <div class="t"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><div><b>English &amp; Español</b><span>From first call to resolution</span></div></div>
+      <div class="f" data-reveal><div class="n" data-count="1000" data-suffix="+">1,000+</div><div class="l">Cases resolved</div></div>
+      <div class="f" data-reveal style="--d:120ms"><div class="n" data-count="10" data-prefix="$" data-suffix="M+">$10M+</div><div class="l">Recovered by our attorneys</div></div>
+      <div class="f" data-reveal style="--d:240ms"><div class="n">2016</div><div class="l">Taking on insurers since</div></div>
+      <div class="f" data-reveal style="--d:360ms"><div class="n">EN · ES</div><div class="l">From first call to resolution</div></div>
     </div>
   </section>
 
   <section class="block" id="cases" aria-labelledby="cases-title">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Case types</div>
-        <h2 id="cases-title">What we handle</h2>
-        <p>Pick the one closest to your situation to see how we can help, or just call and tell us what happened.</p>
+        <div class="eyebrow" data-reveal>Case types</div>
+        <h2 id="cases-title" data-reveal style="--d:100ms">What we handle</h2>
+        <p data-reveal style="--d:200ms">Choose the situation closest to yours, or simply call and tell us what happened.</p>
       </div>
       <div class="groups">
         <div class="group">
-          <div class="top"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg></div><h3>Property &amp; insurance</h3></div>
-          <div class="chips"><a href="#">Hurricane &amp; wind</a><a href="#">Water &amp; flood</a><a href="#">Roof damage</a><a href="#">Fire &amp; smoke</a><a href="#">Mold</a><a href="#">Denied claims</a><a href="#">Underpaid claims</a><a href="#">Commercial property</a></div>
+          <div class="ph"><img src="../assets/img/stock/hurricane-palms.webp" alt="" width="1024" height="683" loading="lazy"></div>
+          <h3 data-reveal>Property &amp; insurance</h3>
+          <ul data-stagger="60">
+            <li data-reveal><a href="#">Hurricane &amp; wind damage<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Water &amp; flood damage<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Roof &amp; fire claims<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Denied or underpaid claims<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+          </ul>
         </div>
         <div class="group">
-          <div class="top"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 17h14l-1.5-6h-11zM7 17v2M17 17v2M8 11l1.5-4h5L16 11"/></svg></div><h3>Personal injury</h3></div>
-          <div class="chips"><a href="#">Car accidents</a><a href="#">Truck accidents</a><a href="#">Rideshare accidents</a><a href="#">Slip and fall</a><a href="#">Premises injuries</a></div>
+          <div class="ph"><img src="../assets/img/stock/brickell-night.webp" alt="" width="1024" height="768" loading="lazy"></div>
+          <h3 data-reveal>Personal injury</h3>
+          <ul data-stagger="60">
+            <li data-reveal><a href="#">Car accidents<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Truck &amp; rideshare accidents<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Slip and fall<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Premises injuries<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+          </ul>
         </div>
         <div class="group">
-          <div class="top"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg></div><h3>Family, immigration &amp; criminal</h3></div>
-          <div class="chips"><a href="#">Divorce</a><a href="#">Custody &amp; support</a><a href="#">Family petitions</a><a href="#">Visas &amp; residency</a><a href="#">Misdemeanors</a><a href="#">Felonies</a></div>
+          <div class="ph"><img src="../assets/img/stock/pen.webp" alt="" width="1024" height="769" loading="lazy"></div>
+          <h3 data-reveal>Family, immigration &amp; criminal</h3>
+          <ul data-stagger="60">
+            <li data-reveal><a href="#">Divorce, custody &amp; support<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Family petitions<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Visas &amp; residency<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+            <li data-reveal><a href="#">Misdemeanors &amp; felonies<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -301,14 +339,14 @@
   <section class="block steps-wrap" id="how" aria-labelledby="how-title">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">How it works</div>
-        <h2 id="how-title">Three steps, and we handle the hard part</h2>
-        <p>You focus on your family, your health or your home. We deal with the insurance company.</p>
+        <div class="eyebrow" data-reveal>How it works</div>
+        <h2 id="how-title" data-reveal style="--d:100ms">Three steps. We handle the hard part.</h2>
+        <p data-reveal style="--d:200ms">You focus on your family, your health or your home. We deal with the insurance company.</p>
       </div>
-      <ol class="steps">
-        <li><h3>Tell us what happened</h3><p>Call, chat or fill out the form, in English or Spanish. It takes a few minutes.</p></li>
-        <li><h3>Free review with an attorney</h3><p>We look at your policy, your injuries or your situation and explain your options plainly.</p></li>
-        <li><h3>We take it from there</h3><p>We deal with the insurer and the paperwork, and keep you updated at every step.</p></li>
+      <ol class="steps" data-stagger="150">
+        <li data-reveal><div class="num" aria-hidden="true">I</div><h3>Tell us what happened</h3><p>Call, chat or fill out the form, in English or Spanish. It takes a few minutes.</p></li>
+        <li data-reveal><div class="num" aria-hidden="true">II</div><h3>Review with an attorney</h3><p>We look at your policy, your injuries or your situation and explain your options plainly.</p></li>
+        <li data-reveal><div class="num" aria-hidden="true">III</div><h3>We take it from there</h3><p>We deal with the insurer and the paperwork, and keep you updated at every step.</p></li>
       </ol>
     </div>
   </section>
@@ -317,17 +355,17 @@
     <div class="wrap why">
       <div class="photo">
         <img src="../assets/img/lazaro-seated.webp" alt="Lazaro De La Noval, Esq." width="800" height="1000" loading="lazy">
-        <div class="cap"><b>Lazaro De La Noval, Esq.</b><span>Founder &amp; Managing Partner</span></div>
+        <div class="cap" data-reveal style="--d:250ms"><b>Lazaro De La Noval, Esq.</b><span>Founder &amp; Managing Partner</span></div>
       </div>
       <div>
-        <div class="eyebrow">Why De La Noval</div>
-        <h2 id="why-title" style="font-size:clamp(32px,3.6vw,48px);margin:14px 0 16px">We know how insurers and prosecutors build their cases</h2>
-        <p style="color:var(--slate);margin:0 0 32px">Most firms only see one side. Our partners have worked on the other side of the table, and they bring that knowledge to every case.</p>
-        <div class="reasons">
-          <div><h3>Inside knowledge</h3><p>Lazaro began his career defending insurance companies. He knows how claims get delayed and denied.</p></div>
-          <div><h3>Courtroom experience</h3><p>Elizabeth prosecuted misdemeanors and felonies as an Assistant State Attorney in Miami-Dade.</p></div>
-          <div><h3>Updates you can count on</h3><p>Clients tell us they always knew what was happening in their case. That is the standard.</p></div>
-          <div><h3>Your language</h3><p>Every conversation, document and update is available in English or Spanish.</p></div>
+        <div class="eyebrow" data-reveal>Why De La Noval</div>
+        <h2 id="why-title" data-reveal style="--d:100ms;font-size:clamp(36px,4vw,58px);margin:18px 0 18px">We know how insurers and prosecutors build their cases.</h2>
+        <p data-reveal style="--d:200ms;color:var(--slate);margin:0 0 36px">Most firms only see one side. Our partners have worked on the other side of the table, and they bring that knowledge to every case.</p>
+        <div class="reasons" data-stagger="110">
+          <div data-reveal><h3>Inside knowledge</h3><p>Lazaro began his career defending insurance companies. He knows how claims get delayed and denied.</p></div>
+          <div data-reveal><h3>Courtroom experience</h3><p>Elizabeth prosecuted misdemeanors and felonies as an Assistant State Attorney in Miami-Dade.</p></div>
+          <div data-reveal><h3>Updates you can count on</h3><p>Clients tell us they always knew what was happening in their case. That is the standard.</p></div>
+          <div data-reveal><h3>Your language</h3><p>Every conversation, document and update is available in English or Spanish.</p></div>
         </div>
       </div>
     </div>
@@ -336,14 +374,14 @@
   <section class="block" aria-labelledby="results-title" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Results</div>
-        <h2 id="results-title">Recent results</h2>
-        <p>Placeholders: add verified case results here before launch.</p>
+        <div class="eyebrow" data-reveal>Results</div>
+        <h2 id="results-title" data-reveal style="--d:100ms">Recent results</h2>
+        <p data-reveal style="--d:200ms"><span class="ph-note">Placeholders: add verified case results here before launch.</span></p>
       </div>
-      <div class="results">
-        <div class="result"><div class="amt">[$ amount]</div><div class="type">[Hurricane damage claim]</div><p>[One sentence on what the insurer offered and what the client recovered.]</p></div>
-        <div class="result"><div class="amt">[$ amount]</div><div class="type">[Car accident]</div><p>[One sentence on the case and outcome.]</p></div>
-        <div class="result"><div class="amt">[$ amount]</div><div class="type">[Water damage claim]</div><p>[One sentence on the case and outcome.]</p></div>
+      <div class="results" data-stagger="120">
+        <div class="result" data-reveal><div class="amt">[$ amount]</div><div class="type">[Hurricane damage claim]</div><p>[One sentence on what the insurer offered and what the client recovered.]</p></div>
+        <div class="result" data-reveal><div class="amt">[$ amount]</div><div class="type">[Car accident]</div><p>[One sentence on the case and outcome.]</p></div>
+        <div class="result" data-reveal><div class="amt">[$ amount]</div><div class="type">[Water damage claim]</div><p>[One sentence on the case and outcome.]</p></div>
       </div>
       <div class="disclaim">Prior results do not guarantee a similar outcome. Every case is different.</div>
     </div>
@@ -352,17 +390,17 @@
   <section class="block reviews-wrap" id="reviews" aria-labelledby="reviews-title">
     <div class="wrap">
       <div class="sec-head">
-        <div class="eyebrow">Reviews</div>
-        <h2 id="reviews-title">What our clients say</h2>
+        <div class="eyebrow" data-reveal>Reviews</div>
+        <h2 id="reviews-title" data-reveal style="--d:100ms">What our clients say</h2>
       </div>
-      <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span><span class="ph">[4.9]</span> average from <span class="ph">[XX]</span> Google reviews</span></div>
-      <div class="wall">
-        <figure><blockquote>“Lazaro was exceptional! He provided updates during every step of my case and responded to all my questions. Very appreciative of his hard work and outcome of my case!”</blockquote><figcaption><i aria-hidden="true">★</i>Client review</figcaption></figure>
-        <figure><blockquote>“Great attorney. Lazaro helped me get the money I needed to repair my roof after a storm.”</blockquote><figcaption><i aria-hidden="true">★</i>Client review</figcaption></figure>
-        <figure lang="es"><blockquote>“Excelente y eficiente servicio. Estoy muy satisfecho con cómo manejaron mi caso.”</blockquote><figcaption><i aria-hidden="true">★</i>Reseña de cliente</figcaption></figure>
-        <figure><blockquote>“Laz was awesome. He was always keeping me up to date on what was going on. Very professional. I honestly couldn't expect a better outcome. Would definitely recommend.”</blockquote><figcaption><i aria-hidden="true">★</i>Client review</figcaption></figure>
-        <figure><blockquote>“Lazaro helped me get the money I needed to repair my home from my insurance company.”</blockquote><figcaption><i aria-hidden="true">★</i>Client review</figcaption></figure>
-        <figure style="background:var(--navy);color:#fff;border-color:var(--navy)"><blockquote style="font-weight:500">Worked with us? We would be grateful for your review.</blockquote><a class="btn" href="#" style="min-height:46px">Leave a review</a></figure>
+      <div class="rating" data-reveal><span class="stars" aria-hidden="true">★★★★★</span><span><span class="ph-note">[4.9]</span> average from <span class="ph-note">[XX]</span> Google reviews</span></div>
+      <div class="wall" data-stagger="100">
+        <figure data-reveal><blockquote>“Lazaro was exceptional! He provided updates during every step of my case and responded to all my questions. Very appreciative of his hard work and outcome of my case!”</blockquote><figcaption>Client review</figcaption></figure>
+        <figure data-reveal><blockquote>“Great attorney. Lazaro helped me get the money I needed to repair my roof after a storm.”</blockquote><figcaption>Property insurance client</figcaption></figure>
+        <figure data-reveal lang="es"><blockquote>“Excelente y eficiente servicio. Estoy muy satisfecho con cómo manejaron mi caso.”</blockquote><figcaption>Reseña de cliente</figcaption></figure>
+        <figure data-reveal><blockquote>“Laz was awesome. He was always keeping me up to date on what was going on. Very professional. I honestly couldn't expect a better outcome.”</blockquote><figcaption>Client review</figcaption></figure>
+        <figure data-reveal><blockquote>“Lazaro helped me get the money I needed to repair my home from my insurance company.”</blockquote><figcaption>Property insurance client</figcaption></figure>
+        <figure class="ask" data-reveal><blockquote>Worked with us? We would be grateful for your review.</blockquote><a class="btn" href="#">Leave a review</a></figure>
       </div>
     </div>
   </section>
@@ -370,11 +408,11 @@
   <section class="block" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
       <div class="sec-head center">
-        <div class="eyebrow">FAQ</div>
-        <h2 id="faq-title">Questions we hear every week</h2>
+        <div class="eyebrow" data-reveal>FAQ</div>
+        <h2 id="faq-title" data-reveal style="--d:100ms">Questions we hear every week</h2>
       </div>
-      <div class="faq">
-        <details open><summary>How much does it cost to talk to a lawyer?</summary><p>Your first consultation is free and there is no obligation. <span class="ph">[Confirm fee structure, for example contingency fees for injury and property claims.]</span></p></details>
+      <div class="faq" data-reveal style="--d:150ms">
+        <details open><summary>How much does it cost to talk to a lawyer?</summary><p>Your first conversation is about understanding your situation, with no obligation. <span class="ph-note">[Confirm consultation and fee policy, for example contingency fees for injury and property claims.]</span></p></details>
         <details><summary>My insurance company denied my claim. Is it too late?</summary><p>Not necessarily. Florida law sets deadlines for property claims and lawsuits, and they depend on your policy and the date of the loss. Call us as soon as you can so we can review your timeline.</p></details>
         <details><summary>What should I do right after a car accident?</summary><p>Get medical care, report the accident, take photos and collect witness information. In Florida, seeing a doctor within 14 days matters for your PIP benefits. Avoid giving a recorded statement to the other driver's insurer before you speak with a lawyer.</p></details>
         <details><summary>Will my case go to court?</summary><p>Many cases are resolved through negotiation without a trial. If yours needs to go to court, we will prepare you and be with you at every step.</p></details>
@@ -385,14 +423,16 @@
   </section>
 
   <section class="band" aria-labelledby="band-title">
+    <div class="bg" data-parallax="0.1"><img src="../assets/img/stock/skyline-night.webp" alt="" width="1024" height="768" loading="lazy"></div>
     <div class="wrap">
       <div>
-        <h2 id="band-title">Talk to an attorney today</h2>
-        <p>Free consultation. Hablamos español.</p>
+        <div class="eyebrow" data-reveal>Consultations in English &amp; Spanish</div>
+        <h2 id="band-title" data-reveal style="--d:100ms">Talk to an attorney today.</h2>
+        <p data-reveal style="--d:200ms">Tell us what happened and we will explain exactly where you stand.</p>
       </div>
-      <div class="acts">
+      <div class="acts" data-reveal style="--d:300ms">
         <a class="btn" href="tel:+17862578847">Call (786) 257-8847</a>
-        <a class="btn btn-outline" href="#contact">Get a free case review</a>
+        <a class="btn btn-line" href="#review">Request a case review</a>
       </div>
     </div>
   </section>
@@ -404,14 +444,14 @@
       <img class="logo-f" src="../assets/img/logo-white.png" alt="De La Noval, P.A." width="312" height="156" loading="lazy">
       <p style="margin:0;font-size:15px;max-width:320px">Property insurance claims, personal injury, family law, immigration and criminal defense in Doral and across Florida.</p>
     </div>
-    <div><h3>Case types</h3><ul><li><a href="#">Property &amp; insurance</a></li><li><a href="#">Personal injury</a></li><li><a href="#">Family law</a></li><li><a href="#">Immigration</a></li><li><a href="#">Criminal defense</a></li></ul></div>
-    <div><h3>Contact</h3><ul><li><a href="tel:+17862578847">(786) 257-8847</a></li><li>Fax (305) 463-1639</li><li><a href="mailto:LD@delanovalpa.com">LD@delanovalpa.com</a></li><li>Mon–Fri, 8:30 AM–5:00 PM</li></ul></div>
-    <div class="map" role="img" aria-label="Map placeholder for 8780 NW 18th Terrace, Doral"><div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>8780 NW 18th Terrace<br>Doral, Florida 33172<br><a href="#" style="color:#8da0ff">Get directions</a></div></div>
-    <div class="legal">Attorney advertising. Prior results do not guarantee a similar outcome. Contacting the firm does not create an attorney-client relationship. © 2026 De La Noval, P.A. · <a href="#">Privacy</a> · <a href="#">Accessibility</a></div>
+    <div><h3>Case types</h3><ul><li><a class="sweep" href="#">Property &amp; insurance</a></li><li><a class="sweep" href="#">Personal injury</a></li><li><a class="sweep" href="#">Family law</a></li><li><a class="sweep" href="#">Immigration</a></li><li><a class="sweep" href="#">Criminal defense</a></li></ul></div>
+    <div><h3>Contact</h3><ul><li><a class="sweep" href="tel:+17862578847">(786) 257-8847</a></li><li>Fax (305) 463-1639</li><li><a class="sweep" href="mailto:LD@delanovalpa.com">LD@delanovalpa.com</a></li><li>Mon–Fri, 8:30 AM–5:00 PM</li></ul></div>
+    <div class="map"><iframe title="Map of De La Noval, P.A. at 8780 NW 18th Terrace, Doral" src="https://www.google.com/maps?q=8780+NW+18th+Terrace,+Doral,+FL+33172&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><div class="dir"><span>8780 NW 18th Terrace, Doral</span><a class="sweep" href="https://www.google.com/maps/dir/?api=1&amp;destination=8780+NW+18th+Terrace,+Doral,+FL+33172" target="_blank" rel="noopener">Get directions</a></div></div>
+    <div class="legal">Attorney advertising. Prior results do not guarantee a similar outcome. Contacting the firm does not create an attorney-client relationship. © 2026 De La Noval, P.A. · <a class="sweep" href="#">Privacy</a> · <a class="sweep" href="#">Accessibility</a></div>
   </div>
 </footer>
 
-<a class="mock-back" href="../">&larr; All concepts</a>
+<a class="mock-back" href="../index.html">&larr; All concepts</a>
 
 <script>
   document.querySelector('.menu-btn').addEventListener('click', function () {
@@ -430,6 +470,6 @@
     });
   });
 </script>
-<script src="../assets/chat.js" data-accent="#3957ff" data-font="Rubik, system-ui, sans-serif" data-radius="16" data-teaser="Hi! Were you injured, or is this about an insurance claim? También hablamos español."></script>
+<script src="../assets/chat.js" data-accent="#3957ff" data-teaser="Talk to our AI assistant"></script>
 </body>
 </html>
