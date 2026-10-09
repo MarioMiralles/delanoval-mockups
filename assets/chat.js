@@ -5,12 +5,14 @@
  *   data-accent    brand color for the launcher, headers and visitor bubbles
  *   data-teaser    tooltip text above the launcher (default "Talk to AI Assistant")
  *   data-business  business name shown in the card and chat header
+ *   data-style     "refined" for the plugin's Refined chat preset (default: Signature)
  */
 (function () {
   var tag = document.currentScript;
   var accent = tag.getAttribute('data-accent') || '#3957ff';
   var tip = tag.getAttribute('data-teaser') || 'Talk to AI Assistant';
   var biz = tag.getAttribute('data-business') || 'De La Noval, P.A.';
+  var variant = tag.getAttribute('data-style') || '';
   var greeting = 'Hi! Thanks for reaching out to ' + biz + (/\.$/.test(biz) ? '' : '.') + ' How can I help you today? También hablamos español.';
 
   var css = '' +
@@ -81,6 +83,41 @@
     '.ssw-send:hover{background:var(--ss-deep)}' +
     '@media (prefers-reduced-motion:reduce){.ssw *{animation:none!important;transition:none!important}}';
 
+  // data-style="refined": the plugin's Refined chat preset (light header, no avatar,
+  // outlined visitor, plain assistant, brand tint, 0 corners, site font, spaced caps).
+  var R = '.ssw[data-style="refined"] ';
+  if (variant === 'refined') css += '' +
+    '.ssw[data-style="refined"]{--ss-surface:color-mix(in srgb,var(--ss-accent) 3%,#fff);--ss-ink:color-mix(in srgb,var(--ss-accent) 12%,#1d2327);--ss-muted:color-mix(in srgb,var(--ss-accent) 8%,#5c6166);--ss-rule:color-mix(in srgb,var(--ss-accent) 16%,#e6e6e6);font-family:inherit}' +
+    R + '.ssw-card,' + R + '.ssw-panel{border-radius:0}' +
+    R + '.ssw-head{background:transparent;color:var(--ss-ink)}' +
+    R + '.ssw-card .ssw-head{padding-bottom:8px}' +
+    R + '.ssw-eyebrow{margin-bottom:12px;font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ss-accent)}' +
+    R + '.ssw-card h3{font-size:22px;font-weight:400;letter-spacing:.005em;color:var(--ss-ink)}' +
+    R + '.ssw-card p{color:var(--ss-muted)}' +
+    R + '.ssw-x{color:var(--ss-muted)}' + R + '.ssw-x:hover{background:var(--ss-rule);color:var(--ss-ink)}' +
+    R + '.ssw-tiles{gap:0;padding:12px 0 8px}' +
+    R + '.ssw-tile{background:transparent;border:0;border-top:1px solid var(--ss-rule);border-radius:0;padding:18px 22px;box-shadow:none}' +
+    R + '.ssw-tile:hover{background:color-mix(in srgb,var(--ss-accent) 6%,transparent);box-shadow:none}' +
+    R + '.ssw-tile-ico{width:28px;height:28px;background:transparent;color:var(--ss-accent)}' +
+    R + '.ssw-tile-ico svg{stroke-width:1.5}' +
+    R + '.ssw-tile-label{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}' +
+    R + '.ssw-tile-desc{font-size:14px;color:color-mix(in srgb,var(--ss-muted) 80%,var(--ss-ink))}' +
+    R + '.ssw-chev{color:var(--ss-accent)}' +
+    R + '.ssw-panel .ssw-head{background:var(--ss-surface);border-bottom:1px solid var(--ss-rule);padding:18px 14px 16px 20px}' +
+    R + '.ssw-av{display:none}' +
+    R + '.ssw-id{flex-direction:column-reverse;gap:6px}' +
+    R + '.ssw-id span{font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ss-accent)}' +
+    R + '.ssw-id b{font-size:19px;font-weight:500;letter-spacing:.01em}' +
+    R + '.ssw-msgs{padding:22px 20px;gap:16px}' +
+    R + '.ssw-msg{border-radius:0;font-weight:400}' +
+    R + '.ssw-bot{background:transparent;box-shadow:none;border-left:1px solid var(--ss-accent);padding:2px 0 2px 16px;max-width:88%}' +
+    R + '.ssw-me{background:#fff;color:var(--ss-ink);box-shadow:0 0 0 1px var(--ss-rule),0 1px 0 1px var(--ss-rule)}' +
+    R + '.ssw-typing{padding:6px 0 6px 16px}' +
+    R + '.ssw-input{margin:0;padding:12px 12px 12px 18px;border:0;border-top:1px solid var(--ss-rule);border-radius:0;background:transparent;box-shadow:none}' +
+    R + '.ssw-input:focus-within{box-shadow:none;border-top-color:var(--ss-accent)}' +
+    R + '.ssw-input textarea{font-weight:400}' +
+    R + '.ssw-send{width:42px;height:42px;border-radius:0;box-shadow:none}';
+
   var style = document.createElement('style');
   style.textContent = css;
   document.head.appendChild(style);
@@ -90,6 +127,7 @@
 
   var root = document.createElement('div');
   root.className = 'ssw';
+  if (variant) root.setAttribute('data-style', variant);
   root.innerHTML = '' +
     '<div class="ssw-card" role="dialog" aria-label="How would you like to connect?">' +
       '<div class="ssw-head"><span class="ssw-eyebrow">' + biz + '</span><h3>How would you like to connect?</h3><p>Choose your preferred way to chat</p>' +
