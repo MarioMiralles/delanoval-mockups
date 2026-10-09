@@ -64,8 +64,20 @@
     nav.main.open{opacity:1;visibility:visible}
     nav.main a:not(.btn){font:500 40px/1.2 var(--serif);letter-spacing:0;text-transform:none}
     nav.main .btn{margin-top:20px}
-    header.site.menu-open{color:#fff}
+    header.site.menu-open{color:#fff;background:transparent;box-shadow:none}
+    .menu-open .logo{position:relative;z-index:60}
+    .menu-open .logo .dark{display:block}
+    .menu-open .logo .light{display:none}
+    .menu-open nav.main .btn,.is-scrolled.menu-open nav.main .btn{background:var(--royal);border-color:var(--royal);color:#fff}
     .util .hide-sm{display:none}
+  }
+
+  @media (max-width:760px){
+    .util .wrap{min-height:32px;font-size:12px}
+    .bar{min-height:64px;gap:16px}
+    .is-scrolled .bar{min-height:58px}
+    .logo{width:148px}
+    .menu-btn{min-height:38px;padding:0 14px;font-size:11px}
   }
 
   /* Hero */
@@ -88,7 +100,7 @@
   .hero-foot .scroll-cue{align-self:center}
   @media (max-width:760px){
     .hero{min-height:0}
-    .hero>.wrap{padding-top:196px}
+    .hero>.wrap{padding-top:144px}
     .hero .label{margin-bottom:16px;letter-spacing:.24em}
     .hero h1{font-size:46px;margin-bottom:20px}
     .hero .lede{font-size:17px;margin-bottom:28px}
