@@ -10,6 +10,7 @@ Each concept is a single homepage; menu links and buttons are placeholders.
 | `editorial/` | 2 · Editorial: DM Serif Display/Text, full-length portrait hero, angled shapes taken from the DN monogram |
 | `other-side/` | 3 · The Other Side: dark, Fraunces, full-height portrait hero, interactive claim check |
 | `advocate/` | 4 · Advocate: Marcellus, case review form in the hero, working EN/ES switch, Google Maps footer |
+| `homepage/` | Merged homepage (Lazaro's pick, 2026-10-08): Concept 1 plus the guides (2), an injury and property claim check inside practice-area tabs (3), and the case review form and case types (4) |
 
 Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `#3957ff`, ice `#f5f7ff`, slate `#3b4855`, with Rubik for body text.
 
@@ -37,6 +38,7 @@ Published with GitHub Pages from the `main` branch root (`.nojekyll` keeps the f
 - Pages carry `noindex` so the mockups stay out of search results.
 - Text in `[brackets]` marks content the firm still needs to supply (ratings, case results, fee policy).
 - "1,000+ cases resolved" and "$10M+ recovered" are the figures on the firm's current homepage.
+- The merged homepage uses $25M+ recovered, per Lazaro (2026-10-08).
 
 ## Photo credits
 
