@@ -47,7 +47,7 @@
   .util .lang a[aria-current]{opacity:1}
   .bar{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:96px;transition:min-height .6s var(--ease-out)}
   .is-scrolled .bar{min-height:78px}
-  .logo{display:block;width:128px}
+  .logo{display:block;width:clamp(184px,17vw,236px)}
   .logo img{width:100%}
   .logo .light{display:none}
   .is-scrolled .logo .dark{display:none}
@@ -73,7 +73,7 @@
   .hero .bg{position:absolute;inset:0}
   .hero .bg img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,16,31,.92) 0%,rgba(5,27,52,.7) 42%,rgba(5,27,52,.18) 100%),linear-gradient(0deg,rgba(3,16,31,.85) 0%,rgba(3,16,31,0) 40%)}
-  .hero .wrap{position:relative;z-index:1;width:100%;padding-top:180px}
+  .hero>.wrap{position:relative;z-index:1;width:100%;padding-top:180px}
   .hero .label{color:var(--royal-tint);margin-bottom:28px}
   .hero h1{font-size:clamp(58px,8.4vw,132px);line-height:.96;margin-bottom:34px}
   .hero .lede{max-width:520px;font-size:clamp(18px,1.4vw,20px);color:#dfe5f2;margin:0 0 44px}
@@ -88,7 +88,7 @@
   .hero-foot .scroll-cue{align-self:center}
   @media (max-width:760px){
     .hero{min-height:0}
-    .hero .wrap{padding-top:196px}
+    .hero>.wrap{padding-top:196px}
     .hero .label{margin-bottom:16px;letter-spacing:.24em}
     .hero h1{font-size:46px;margin-bottom:20px}
     .hero .lede{font-size:17px;margin-bottom:28px}
@@ -185,7 +185,7 @@
   .feature dl{display:grid;grid-template-columns:auto 1fr;gap:16px 28px;margin:10px 0 6px;padding-top:28px;border-top:1px solid var(--line-dark)}
   .feature dt{font:400 12px/2 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--royal-tint)}
   .feature dd{margin:0;font:500 22px/1.35 var(--serif)}
-  @media (max-width:900px){.feature{grid-template-columns:1fr}.feature .ph{min-height:360px}}
+  @media (max-width:900px){.feature{grid-template-columns:1fr}.feature .ph{min-height:360px}.feature .copy{padding:96px var(--gut)}}
 
   /* Attorneys */
   .team .wrap{padding-top:clamp(96px,11vw,152px);padding-bottom:clamp(96px,11vw,152px)}
@@ -233,7 +233,7 @@
   .guide .meta span:last-child{color:var(--muted);letter-spacing:.16em}
   .guide h3{font-size:clamp(28px,2.4vw,36px);line-height:1.12;margin-bottom:22px}
   .guide .more{margin-top:auto;color:var(--navy)}
-  @media (max-width:900px){.cards{grid-template-columns:1fr}.guide .ph img{aspect-ratio:16/9}}
+  @media (max-width:900px){.cards{grid-template-columns:1fr;row-gap:80px}.guide .ph img{aspect-ratio:16/9}.guide h3{margin-bottom:18px}}
 
   /* Case review */
   .review{position:relative;color:#fff;overflow:hidden;background:var(--deep)}
@@ -273,7 +273,7 @@
 
   footer.site{background:var(--deep);color:#a9b6cc;border-top:1px solid var(--line-dark)}
   footer.site .wrap{padding-top:64px;padding-bottom:40px;display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:36px}
-  footer.site img{width:118px;margin-bottom:22px}
+  footer.site img{width:236px;margin-bottom:26px}
   footer.site h3{font:400 12px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:#fff;margin-bottom:18px}
   footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
   footer.site a{color:#dfe5f2}
@@ -297,8 +297,8 @@
   </div>
   <div class="wrap bar">
     <a class="logo" href="#" aria-label="De La Noval, P.A. home">
-      <img class="dark" src="../assets/img/logo-white.png" alt="De La Noval, P.A." width="312" height="156">
-      <img class="light" src="../assets/img/logo-blue.png" alt="" width="312" height="156">
+      <img class="dark" src="../assets/img/logo-wordmark-white.png" alt="De La Noval, P.A., Attorneys at Law" width="1000" height="171">
+      <img class="light" src="../assets/img/logo-wordmark-navy.png" alt="" width="1000" height="171">
     </a>
     <nav class="main" id="nav" aria-label="Main">
       <a class="sweep" href="#practice">Practice areas</a>
@@ -315,7 +315,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="bg kenburns"><img src="../assets/img/stock/brickell-golden.webp" alt="" width="1920" height="1280" fetchpriority="high"></div>
     <div class="wrap">
-      <div class="label" data-load style="--d:200ms">Attorneys at Law · Doral, Florida</div>
+      <div class="label" data-load style="--d:200ms">Law firm · Doral, Florida</div>
       <h1 id="hero-title"><span class="line"><span style="--d:300ms">Law you can</span></span><span class="line"><span style="--d:450ms"><em>understand.</em></span></span></h1>
       <p class="lede" data-load style="--d:750ms">Property insurance claims, personal injury and family law, explained plainly and pursued in full.</p>
       <div class="actions" data-load style="--d:900ms">
@@ -567,7 +567,7 @@
 <footer class="site">
   <div class="wrap">
     <div>
-      <img src="../assets/img/logo-white.png" alt="De La Noval, P.A." width="312" height="156" loading="lazy">
+      <img src="../assets/img/logo-wordmark-white.png" alt="De La Noval, P.A., Attorneys at Law" width="1000" height="171" loading="lazy">
       <p style="margin:0;max-width:340px;font-size:15px">Law you can understand. Serving Doral, Miami-Dade and clients across Florida.</p>
     </div>
     <div><h3>Practice</h3><ul><li><a class="sweep" href="#practice" data-tab="property">Property &amp; insurance</a></li><li><a class="sweep" href="#practice" data-tab="injury">Personal injury</a></li><li><a class="sweep" href="#practice" data-tab="family">Family law</a></li></ul></div>
@@ -577,7 +577,7 @@
   </div>
 </footer>
 
-<a class="mock-back" href="../index.html">&larr; All concepts</a>
+<a class="mock-back" href="../index.html">&larr; All designs</a>
 
 <script>
   (function () {

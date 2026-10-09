@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Website Concepts | De La Noval, P.A.</title>
-<meta name="description" content="Four homepage design concepts for the De La Noval, P.A. website.">
+<title>Website Redesign | De La Noval, P.A.</title>
+<meta name="description" content="The new homepage and the original design concepts for the De La Noval, P.A. website.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
   a:focus-visible{outline:3px solid var(--royal);outline-offset:4px}
   .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,40px)}
   header{padding:40px 0 8px}
-  header img{width:120px}
+  header img{width:min(260px,70vw)}
   .intro{padding:40px 0 48px;max-width:760px}
   .intro .eyebrow{font:600 13px/1 'Rubik',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--royal)}
   h1{font-size:clamp(36px,4.4vw,56px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px;font-weight:600}
@@ -33,6 +33,13 @@
   .card p{margin:0;color:var(--slate);flex:1}
   .card .go{margin-top:10px;font-weight:600;color:var(--royal)}
   @media (max-width:820px){.grid{grid-template-columns:1fr}}
+  .featured{flex-direction:row;margin-bottom:64px}
+  .featured img{width:58%;aspect-ratio:16/10;border-bottom:0;border-right:1px solid var(--line)}
+  .featured .body{justify-content:center;padding:clamp(24px,3vw,44px)}
+  .featured h2{font-size:clamp(26px,2.6vw,34px)}
+  .featured .num{color:var(--royal)}
+  @media (max-width:820px){.featured{flex-direction:column}.featured img{width:100%;border-right:0;border-bottom:1px solid var(--line)}}
+  .sub{margin:0 0 20px;font-size:22px;font-weight:600}
   .shared{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,40px);margin-bottom:56px}
   .shared h2{margin:0 0 16px;font-size:22px;font-weight:600}
   .shared ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px}
@@ -44,15 +51,26 @@
 </head>
 <body>
 <div class="wrap">
-  <header><img src="assets/img/logo-blue.png" alt="De La Noval, P.A." width="312" height="156"></header>
+  <header><img src="assets/img/logo-wordmark-navy.png" alt="De La Noval, P.A., Attorneys at Law" width="1000" height="171"></header>
 
   <section class="intro">
-    <div class="eyebrow">Homepage concepts · October 2026</div>
-    <h1>Four directions for the new delanovalpa.com</h1>
-    <p>Each concept keeps the firm's logo and colors and uses your real attorneys, client reviews and results. All four aim for an elegant, high-end feel, with Miami photography and subtle motion as you scroll. They differ in personality, from classic and refined to bold and conversion-focused.</p>
-    <p>Open each one on your computer and your phone, and scroll slowly to see the animation. Pick the one you like most, or mix pieces from several. Forms and links are for demonstration only.</p>
+    <div class="eyebrow">Website redesign · October 2026</div>
+    <h1>Your new homepage for delanovalpa.com</h1>
+    <p>Built on Concept 1, with the pieces you picked from the other concepts: the guides, a claim check in the Personal Injury and Property tabs, the case types, and the case review form. It uses your new logo, and criminal defense and immigration have been removed.</p>
+    <p>Open it on your computer and your phone, and scroll slowly to see the animation. Forms and links are for demonstration only. The four original concepts are still below for reference.</p>
   </section>
 
+  <a class="card featured" href="homepage/index.html">
+    <img src="assets/img/thumbs/homepage.webp" alt="Preview of the new homepage" width="960" height="600">
+    <div class="body">
+      <div class="num">Homepage · Revision 1</div>
+      <h2>Your homepage</h2>
+      <p>Concept 1's look throughout, with practice-area tabs, an injury and property claim check, legal guides, and a case review form at the close.</p>
+      <span class="go">Open homepage &rarr;</span>
+    </div>
+  </a>
+
+  <h2 class="sub">The original four concepts</h2>
   <div class="grid">
     <a class="card" href="counsel/index.html">
       <img src="assets/img/thumbs/counsel.webp" alt="Preview of Concept 1, Counsel" width="960" height="600">
@@ -93,7 +111,7 @@
   </div>
 
   <section class="shared" aria-labelledby="shared-title">
-    <h2 id="shared-title">Included in every concept</h2>
+    <h2 id="shared-title">Included in every design</h2>
     <ul>
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>A chat assistant that answers visitors in English or Spanish and captures their details, day or night</li>
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Click-to-call phone number and a consultation request form</li>
@@ -104,7 +122,7 @@
     </ul>
   </section>
 
-  <footer>Prepared for De La Noval, P.A. by Mario Miralles. These are design concepts, not the live website.</footer>
+  <footer>Prepared for De La Noval, P.A. by Mario Miralles. These are design mockups, not the live website.</footer>
 </div>
 </body>
 </html>
