@@ -21,6 +21,7 @@ Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `
   and pages stay fully visible without JavaScript.
 - `assets/chat.js`: a mockup of the SiteStaffr widget modeled on the plugin's own markup and CSS: the launcher and tooltip,
   the "How would you like to connect?" card, the text chat panel and a demo voice (listening) state.
+  `data-style="refined"` on the script tag switches it to the plugin's Refined chat preset (used by `homepage/`).
 
 ## Viewing
 
