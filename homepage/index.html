@@ -72,12 +72,11 @@
     .util .hide-sm{display:none}
   }
 
+  .logo,.menu-btn{transition:width .6s var(--ease-out),min-height .6s var(--ease-out),padding .6s var(--ease-out)}
   @media (max-width:760px){
-    .util .wrap{min-height:32px;font-size:12px}
-    .bar{min-height:64px;gap:16px}
     .is-scrolled .bar{min-height:58px}
-    .logo{width:148px}
-    .menu-btn{min-height:38px;padding:0 14px;font-size:11px}
+    .is-scrolled .logo{width:148px}
+    .is-scrolled .menu-btn{min-height:38px;padding:0 14px}
   }
 
   /* Hero */
@@ -100,7 +99,7 @@
   .hero-foot .scroll-cue{align-self:center}
   @media (max-width:760px){
     .hero{min-height:0}
-    .hero>.wrap{padding-top:144px}
+    .hero>.wrap{padding-top:196px}
     .hero .label{margin-bottom:16px;letter-spacing:.24em}
     .hero h1{font-size:46px;margin-bottom:20px}
     .hero .lede{font-size:17px;margin-bottom:28px}
