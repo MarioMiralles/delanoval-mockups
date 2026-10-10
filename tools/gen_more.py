@@ -10,6 +10,8 @@ CARDS_CSS = '''
   .guide .meta span:last-child{color:var(--muted);letter-spacing:.16em}
   .guide h3{font-size:clamp(26px,2.2vw,34px);line-height:1.12;margin-bottom:22px}
   .guide .more{margin-top:auto;color:var(--navy)}
+  .guide.soon .more{color:var(--muted)}
+  .guide.soon:hover .ph img{transform:none}
   @media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
   @media (max-width:640px){.cards{grid-template-columns:1fr;row-gap:64px}.guide .ph img{aspect-ratio:16/9}}
 '''
@@ -30,10 +32,12 @@ def guide_card(root, g, extra=''):
     href = root + 'blog/%s/' % slug if slug != '#' else '#'
     la = ' lang="es"' if lang else ''
     read = 'Leer el artículo' if lang else 'Read the article'
-    return (f'<a class="guide" href="{href}" data-cat="{cat}" data-reveal{la}{extra}>'
-            f'<div class="ph"><img src="{root}assets/img/stock/{photo}" alt="" width="{w}" height="{h}" loading="lazy"></div>'
-            f'<div class="meta"><span>{catname}</span><span>{mins}</span></div><h3>{title}</h3>'
-            f'<span class="more nudge">{read} {ARROW16}</span></a>')
+    inner = (f'<div class="ph"><img src="{root}assets/img/stock/{photo}" alt="" width="{w}" height="{h}" loading="lazy"></div>'
+             f'<div class="meta"><span>{catname}</span><span>{mins}</span></div><h3>{title}</h3>')
+    if slug == '#':
+        soon = 'Próximamente' if lang else 'Coming soon'
+        return f'<div class="guide soon" data-cat="{cat}" data-reveal{la}{extra}>{inner}<span class="more">{soon}</span></div>'
+    return f'<a class="guide" href="{href}" data-cat="{cat}" data-reveal{la}{extra}>{inner}<span class="more nudge">{read} {ARROW16}</span></a>'
 
 
 # ---------------- Contact ----------------
