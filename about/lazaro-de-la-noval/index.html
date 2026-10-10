@@ -103,8 +103,10 @@
   .phero .bg img{width:100%;height:100%;object-fit:cover;object-position:70% 40%}
   .phero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,16,31,.95) 0%,rgba(5,27,52,.82) 45%,rgba(5,27,52,.42) 100%),linear-gradient(0deg,rgba(3,16,31,.8) 0%,rgba(3,16,31,0) 45%)}
   .phero>.wrap{position:relative;z-index:1;width:100%;padding-top:168px;padding-bottom:clamp(52px,5vw,72px)}
-  .crumbs{display:flex;align-items:center;gap:14px;margin-bottom:24px;color:var(--royal-tint)}
+  .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:24px;color:var(--royal-tint)}
   .crumbs a{color:#c9d2e6}
+  .crumbs>*{white-space:nowrap}
+  @media (max-width:480px){.crumbs{letter-spacing:.2em;gap:8px 10px}.crumbs i{width:16px}}
   .crumbs i{display:inline-block;width:28px;height:1px;background:currentColor;opacity:.6}
   .phero h1{font-size:clamp(48px,6vw,92px);line-height:.98;margin-bottom:26px}
   .phero .lede{max-width:560px;font-size:clamp(18px,1.4vw,20px);color:#dfe5f2;margin:0}
@@ -354,10 +356,10 @@
       <img class="light" src="../../assets/img/logo-wordmark-navy.png" alt="" width="1000" height="171">
     </a>
     <nav class="main" id="nav" aria-label="Main">
-      <div class="has-sub"><a class="sweep" href="../" aria-current="page">About<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="sub-menu"><a href="../">Our firm</a><a href="../lazaro-de-la-noval/" aria-current="page">Lazaro De La Noval</a><a href="../elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></div></div>
-      <div class="has-sub"><a class="sweep" href="../../homepage/#practice">Practice areas<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="sub-menu"><a href="../../homepage/#practice">Property &amp; insurance</a><a href="../../homepage/#practice">Personal injury</a><a href="../../homepage/#practice">Family law</a></div></div>
+      <div class="has-sub"><a class="sweep" href="../../about/" aria-current="page">About<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="sub-menu"><a href="../../about/">Our firm</a><a href="../../about/lazaro-de-la-noval/" aria-current="page">Lazaro De La Noval</a><a href="../../about/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></div></div>
+      <div class="has-sub"><a class="sweep" href="../../practice-areas/">Practice areas<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="sub-menu"><a href="../../practice-areas/">All practice areas</a><a href="../../practice-areas/property-damage/">Property &amp; insurance</a><a href="../../practice-areas/personal-injury/">Personal injury</a><a href="../../practice-areas/family-law/">Family law</a></div></div>
       <a class="sweep" href="../../homepage/#guides">Guides</a>
       <a class="sweep" href="#review">Contact</a>
       <a class="btn btn-ghost" href="#review">Request a case review</a>
@@ -482,9 +484,9 @@
       <a href="../../homepage/" style="display:inline-block"><img src="../../assets/img/logo-wordmark-white.png" alt="De La Noval, P.A., Attorneys at Law, home" width="1000" height="171" loading="lazy"></a>
       <p style="margin:0;max-width:340px;font-size:15px">Law you can understand. Serving Doral, Miami-Dade and clients across Florida.</p>
     </div>
-    <div><h3>Practice</h3><ul><li><a class="sweep" href="../../homepage/#practice">Property &amp; insurance</a></li><li><a class="sweep" href="../../homepage/#practice">Personal injury</a></li><li><a class="sweep" href="../../homepage/#practice">Family law</a></li></ul></div>
-    <div><h3>Attorneys</h3><ul><li><a class="sweep" href="../lazaro-de-la-noval/">Lazaro De La Noval</a></li><li><a class="sweep" href="../elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></li></ul></div>
-    <div><h3>Firm</h3><ul><li><a class="sweep" href="../">About</a></li><li><a class="sweep" href="../../homepage/#guides">Guides</a></li><li><a class="sweep" href="../#words">Reviews</a></li><li><a class="sweep" href="#review">Case review</a></li></ul></div>
+    <div><h3>Practice</h3><ul><li><a class="sweep" href="../../practice-areas/property-damage/">Property &amp; insurance</a></li><li><a class="sweep" href="../../practice-areas/personal-injury/">Personal injury</a></li><li><a class="sweep" href="../../practice-areas/family-law/">Family law</a></li></ul></div>
+    <div><h3>Attorneys</h3><ul><li><a class="sweep" href="../../about/lazaro-de-la-noval/">Lazaro De La Noval</a></li><li><a class="sweep" href="../../about/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></li></ul></div>
+    <div><h3>Firm</h3><ul><li><a class="sweep" href="../../about/">About</a></li><li><a class="sweep" href="../../homepage/#guides">Guides</a></li><li><a class="sweep" href="../../about/#words">Reviews</a></li><li><a class="sweep" href="#review">Case review</a></li></ul></div>
     <div class="legal">
       <p>Attorney advertising. Prior results do not guarantee a similar outcome. Contacting the firm does not create an attorney-client relationship.</p>
       <p class="credits"><span>© <span data-year>2026</span> De La Noval, P.A. All rights reserved.</span><span class="agency"><span>Website Managed by <a class="sweep" href="https://www.spotmediamiami.com/" target="_blank" rel="noopener">Spot Media Group</a></span><span class="designer">Designed by <a class="sweep" href="https://mariomiralles.github.io/mario-miralles/" target="_blank" rel="noopener">M.F. Miralles LLC</a></span></span></p>
