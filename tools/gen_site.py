@@ -33,14 +33,14 @@ def nav(root, section=None, current=None, home=False):
     prac_sub = link(prac, 'All practice areas') + ''.join(link(prac + s + '/', n) for s, n in AREAS)
     a_cur = ' aria-current="page"' if section == 'about' else ''
     p_cur = ' aria-current="page"' if section == 'practice' else ''
-    g_cur = ' aria-current="page"' if section == 'guides' else ''
+    g_cur = ' aria-current="page"' if section == 'blog' else ''
     c_cur = ' aria-current="page"' if section == 'contact' else ''
     return f'''    <nav class="main" id="nav" aria-label="Main">
       <div class="has-sub"><a class="sweep" href="{about}"{a_cur}>About{CARET}</a>
         <div class="sub-menu">{about_sub}</div></div>
       <div class="has-sub"><a class="sweep" href="{prac}"{p_cur}>Practice areas{CARET}</a>
         <div class="sub-menu">{prac_sub}</div></div>
-      <a class="sweep" href="{root}guides/"{g_cur}>Guides</a>
+      <a class="sweep" href="{root}blog/"{g_cur}>Blog</a>
       <a class="sweep" href="{root}contact/"{c_cur}>Contact</a>
       <a class="btn btn-ghost" href="#review">Request a case review</a>
     </nav>'''
@@ -51,7 +51,7 @@ def footer_cols(root, home=False):
     ppl = ''.join('<li><a class="sweep" href="%sabout/%s/">%s</a></li>' % (root, s, n) for s, n in PEOPLE)
     return ('    <div><h3>Practice</h3><ul>%s</ul></div>\n'
             '    <div><h3>Attorneys</h3><ul>%s</ul></div>\n'
-            '    <div><h3>Firm</h3><ul><li><a class="sweep" href="%sabout/">About</a></li><li><a class="sweep" href="%sguides/">Guides</a></li><li><a class="sweep" href="%sfaqs/">FAQs</a></li><li><a class="sweep" href="%scontact/">Contact</a></li></ul></div>\n'
+            '    <div><h3>Firm</h3><ul><li><a class="sweep" href="%sabout/">About</a></li><li><a class="sweep" href="%sblog/">Blog</a></li><li><a class="sweep" href="%sfaqs/">FAQs</a></li><li><a class="sweep" href="%scontact/">Contact</a></li></ul></div>\n'
             % (prac, ppl, root, root, root, root))
 
 
@@ -71,9 +71,10 @@ def update_existing():
         m = re.search(r'<div class="panel" role="tabpanel" id="panel-%s".*?<div class="panel-card">' % key, s, re.S)
         block = m.group(0)
         s = s.replace(block, block.replace('href="#"', 'href="../practice-areas/%s/"' % slug))
-    s = s.replace('<a class="more sweep nudge" href="#" data-reveal style="--d:200ms">All guides', '<a class="more sweep nudge" href="../guides/" data-reveal style="--d:200ms">All guides')
-    s = s.replace('<a class="guide" href="#" data-reveal>', '<a class="guide" href="../guides/after-the-storm/" data-reveal>', 1)
-    s = s.replace('<a class="guide" href="#" data-reveal', '<a class="guide" href="../guides/" data-reveal')
+    s = re.sub(r'<a class="more sweep nudge" href="[^"]*" data-reveal style="--d:200ms">All (guides|articles)', '<a class="more sweep nudge" href="../blog/" data-reveal style="--d:200ms">All articles', s)
+    s = s.replace('href="../guides/after-the-storm/"', 'href="../blog/after-the-storm/"').replace('href="../guides/"', 'href="../blog/"')
+    s = s.replace('<div class="label" data-reveal>Guides</div>', '<div class="label" data-reveal>Blog</div>')
+    s = s.replace('Read the guide <svg', 'Read the article <svg').replace('Leer la guía <svg', 'Leer el artículo <svg')
     open('homepage/index.html', 'w', encoding='utf-8', newline='\n').write(s)
 
     s = apply_shared(ABOUT, '../', 'about', '../about/')
@@ -501,5 +502,5 @@ for s in ORDER:
     build_sub(s)
 build_contact()
 build_faqs()
-build_guides()
+build_blog()
 build_article()

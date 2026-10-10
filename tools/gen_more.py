@@ -1,4 +1,4 @@
-# Contact, FAQs, Guides index and a sample guide article. Exec'd by gen_site.py (shares its globals).
+# Contact, FAQs, Blog index and a sample blog article. Exec'd by gen_site.py (shares its globals).
 
 CARDS_CSS = '''
   .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:72px clamp(24px,3vw,48px)}
@@ -27,9 +27,9 @@ GUIDES = [
 
 def guide_card(root, g, extra=''):
     slug, cat, catname, mins, photo, w, h, title, lang = g
-    href = root + 'guides/%s/' % slug if slug != '#' else '#'
+    href = root + 'blog/%s/' % slug if slug != '#' else '#'
     la = ' lang="es"' if lang else ''
-    read = 'Leer la guía' if lang else 'Read the guide'
+    read = 'Leer el artículo' if lang else 'Read the article'
     return (f'<a class="guide" href="{href}" data-cat="{cat}" data-reveal{la}{extra}>'
             f'<div class="ph"><img src="{root}assets/img/stock/{photo}" alt="" width="{w}" height="{h}" loading="lazy"></div>'
             f'<div class="meta"><span>{catname}</span><span>{mins}</span></div><h3>{title}</h3>'
@@ -43,7 +43,8 @@ CONTACT_CSS = '''
   .way{display:flex;flex-direction:column;padding-top:28px;border-top:1px solid var(--line);position:relative}
   .way::before{content:"";position:absolute;left:0;top:-1px;width:48px;height:2px;background:var(--royal)}
   .way .label{color:var(--royal);margin-bottom:24px}
-  .way h3{font-size:clamp(26px,2.1vw,32px);line-height:1.2;margin-bottom:14px;font-variant-numeric:lining-nums;overflow-wrap:anywhere}
+  .way h3{font-size:clamp(22px,1.75vw,28px);line-height:1.25;margin-bottom:14px;font-variant-numeric:lining-nums}
+  .way h3.nowrap{white-space:nowrap}
   .way h3 a{text-decoration:none}
   .way p{margin:0 0 24px;font-size:16px;color:var(--slate)}
   .way .more{margin-top:auto;color:var(--navy);align-self:flex-start;background-color:transparent;border:0;padding:0;cursor:pointer}
@@ -73,7 +74,7 @@ def build_contact():
       </div>
       <div class="wgrid" data-stagger="100">
         <div class="way" data-reveal><span class="label">Call</span><h3><a class="sweep" href="tel:+17862578847">(786) 257-8847</a></h3><p>Monday to Friday, 8:30 AM to 5:00 PM. Closed weekends.</p><a class="more sweep nudge" href="tel:+17862578847">Call the firm {ARROW16}</a></div>
-        <div class="way" data-reveal><span class="label">Email</span><h3><a class="sweep" href="mailto:LD@delanovalpa.com">LD@delanovalpa.com</a></h3><p>Send questions or documents at any time, and we will follow up during office hours.</p><a class="more sweep nudge" href="mailto:LD@delanovalpa.com">Send an email {ARROW16}</a></div>
+        <div class="way" data-reveal><span class="label">Email</span><h3 class="nowrap"><a class="sweep" href="mailto:LD@delanovalpa.com">LD@delanovalpa.com</a></h3><p>Send questions or documents at any time, and we will follow up during office hours.</p><a class="more sweep nudge" href="mailto:LD@delanovalpa.com">Send an email {ARROW16}</a></div>
         <div class="way" data-reveal><span class="label">Visit</span><h3>8780 NW 18th Terrace, Doral, Florida 33172</h3><p>Please call ahead to schedule a meeting at the office.</p><a class="more sweep nudge" href="https://www.google.com/maps/dir/?api=1&amp;destination=8780+NW+18th+Terrace,+Doral,+FL+33172" target="_blank" rel="noopener">Get directions {ARROW16}</a></div>
         <div class="way" data-reveal><span class="label">Chat</span><h3>Day or night</h3><p>Our AI assistant answers common questions and takes your details for an attorney, in English or Spanish.</p><button class="more sweep nudge" type="button" data-open-chat>Start a chat {ARROW16}</button></div>
       </div>
@@ -117,7 +118,7 @@ FAQ_CSS = '''
   .fgroup+.fgroup{margin-top:clamp(72px,8vw,112px)}
   .fgroup .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px;margin-bottom:28px}
   .fgroup h2{font-size:clamp(36px,3.6vw,54px)}
-  .fgroup .more{color:var(--navy)}
+  .fgroup .more{color:var(--navy);white-space:nowrap}
   .fgroup details{border-bottom:1px solid var(--line)}
   .fgroup details:first-of-type{border-top:1px solid var(--line)}
   .fgroup summary{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;cursor:pointer;list-style:none;font:500 clamp(22px,1.9vw,28px)/1.25 var(--serif)}
@@ -149,7 +150,7 @@ def build_faqs():
     toc = ''.join('<li><a href="#%s">%s</a></li>' % (k, n) for k, n, _, _ in groups)
     body = ''
     for k, n, qs, link in groups:
-        more = '<a class="more sweep nudge" href="%s">More about %s %s</a>' % (link, n.lower(), ARROW16) if link else ''
+        more = '<a class="more sweep nudge" href="%s" aria-label="Learn more about %s">Learn more %s</a>' % (link, n.lower(), ARROW16) if link else ''
         qa = ''.join('<details><summary>%s</summary><p>%s</p></details>' % q for q in qs)
         body += f'<div class="fgroup" id="{k}" data-reveal><div class="head"><h2>{n}</h2>{more}</div>{qa}</div>'
     m += f'''  <section class="faqall" aria-label="Frequently asked questions">
@@ -193,25 +194,25 @@ GUIDES_CSS = CARDS_CSS + '''
 '''
 
 
-def build_guides():
+def build_blog():
     root = '../'
-    m = hero(root, [(root + 'homepage/', 'Home'), 'Guides'], 'Know your', '<em>rights.</em>',
-             'Plain-language guides from our attorneys on insurance claims, injuries and family matters, in English and Spanish.',
+    m = hero(root, [(root + 'homepage/', 'Home'), 'Blog'], 'Know your', '<em>rights.</em>',
+             'Plain-language articles from our attorneys on insurance claims, injuries and family matters, in English and Spanish.',
              'pen.webp', 1024, 769)
     f = GUIDES[0]
     chips = ''.join('<button type="button" data-filter="%s" aria-pressed="%s">%s</button>' % (k, 'true' if k == 'all' else 'false', n)
-                    for k, n in (('all', 'All guides'), ('property', 'Property claims'), ('injury', 'Personal injury'), ('family', 'Family law'), ('es', 'En español')))
+                    for k, n in (('all', 'All articles'), ('property', 'Property claims'), ('injury', 'Personal injury'), ('family', 'Family law'), ('es', 'En español')))
     cards = ''.join(guide_card(root, g) for g in GUIDES[1:])
-    m += f'''  <section class="glist" aria-label="Guides">
+    m += f'''  <section class="glist" aria-label="Blog articles">
     <div class="wrap">
-      <div class="chips" role="group" aria-label="Filter guides">{chips}</div>
-      <a class="feat" href="{root}guides/{f[0]}/" data-cat="{f[1]}" data-reveal>
+      <div class="chips" role="group" aria-label="Filter articles">{chips}</div>
+      <a class="feat" href="{root}blog/{f[0]}/" data-cat="{f[1]}" data-reveal>
         <div class="ph"><img src="{root}assets/img/stock/{f[4]}" alt="" width="{f[5]}" height="{f[6]}" loading="lazy"></div>
         <div>
           <div class="label">Featured · {f[2]} · {f[3]}</div>
           <h2>{f[7]}</h2>
           <p>The steps you take in the first days after a storm can shape how your claim is handled. Here is what to photograph, save and write down.</p>
-          <span class="more sweep nudge">Read the guide {ARROW16}</span>
+          <span class="more sweep nudge">Read the article {ARROW16}</span>
         </div>
       </a>
       <div class="cards" data-stagger="100">{cards}</div>
@@ -219,7 +220,7 @@ def build_guides():
   </section>
 
 '''
-    js = '''    // Guide filters
+    js = '''    // Blog filters
     var chips = document.querySelectorAll('[data-filter]'), items = document.querySelectorAll('.glist [data-cat]');
     chips.forEach(function (c) {
       c.addEventListener('click', function () {
@@ -230,11 +231,11 @@ def build_guides():
     });
 
 '''
-    out = page(root, 'Guides', 'Plain-language legal guides from De La Noval, P.A. on Florida property insurance claims, personal injury and family law, in English and Spanish.',
-               'pen.webp', m, 'guides', root + 'guides/', extra_css=GUIDES_CSS, extra_js=js)
-    os.makedirs('guides', exist_ok=True)
-    open('guides/index.html', 'w', encoding='utf-8', newline='\n').write(out)
-    print('wrote guides')
+    out = page(root, 'Blog', 'Plain-language legal articles from De La Noval, P.A. on Florida property insurance claims, personal injury and family law, in English and Spanish.',
+               'pen.webp', m, 'blog', root + 'blog/', extra_css=GUIDES_CSS, extra_js=js)
+    os.makedirs('blog', exist_ok=True)
+    open('blog/index.html', 'w', encoding='utf-8', newline='\n').write(out)
+    print('wrote blog')
 
 
 # ---------------- Sample article ----------------
@@ -329,8 +330,8 @@ def build_article():
     m = f'''  <section class="ahero" aria-labelledby="page-title">
     <div class="bg"><img src="{root}assets/img/stock/{g[4]}" alt="" width="{g[5]}" height="{g[6]}" fetchpriority="high"></div>
     <div class="wrap">
-      <nav class="crumbs label" aria-label="Breadcrumb" data-load style="--d:200ms"><a class="sweep" href="{root}homepage/">Home</a><i aria-hidden="true"></i><a class="sweep" href="{root}guides/">Guides</a><i aria-hidden="true"></i><span aria-current="page">{g[2]}</span></nav>
-      <div class="cat label" data-load style="--d:300ms">{g[2]} · Guide</div>
+      <nav class="crumbs label" aria-label="Breadcrumb" data-load style="--d:200ms"><a class="sweep" href="{root}homepage/">Home</a><i aria-hidden="true"></i><a class="sweep" href="{root}blog/">Blog</a><i aria-hidden="true"></i><span aria-current="page">{g[2]}</span></nav>
+      <div class="cat label" data-load style="--d:300ms">{g[2]} · Article</div>
       <h1 id="page-title" data-load style="--d:400ms">{g[7]}</h1>
       <div class="byline" data-load style="--d:600ms">
         <a class="who" href="{root}about/lazaro-de-la-noval/"><img src="{root}assets/img/lazaro-cutout.webp" alt="" width="1000" height="936">By Lazaro De La Noval</a>
@@ -340,7 +341,7 @@ def build_article():
     </div>
   </section>
 
-  <section class="article" aria-label="Guide">
+  <section class="article" aria-label="Article">
     <div class="wrap">
       <article class="prose">{body}
         <div class="author">
@@ -351,7 +352,7 @@ def build_article():
             <p>Founder and managing partner. A former insurance defense attorney who now represents homeowners and businesses in insurance disputes.</p>
           </div>
         </div>
-        <p class="disclaimer">This guide is general information, not legal advice, and reading it does not create an attorney-client relationship. Every claim is different and laws change; speak with an attorney about your situation.</p>
+        <p class="disclaimer">This article is general information, not legal advice, and reading it does not create an attorney-client relationship. Every claim is different and laws change; speak with an attorney about your situation.</p>
       </article>
       <aside class="side">
         <nav class="toc" aria-label="On this page"><div class="label">On this page</div><ol>{toc}</ol></nav>
@@ -369,7 +370,7 @@ def build_article():
     <div class="wrap">
       <div class="sec-head">
         <div class="label" data-reveal>Keep reading</div>
-        <h2 id="related-title" data-reveal style="--d:100ms">Related guides</h2>
+        <h2 id="related-title" data-reveal style="--d:100ms">Related articles</h2>
       </div>
       <div class="cards" data-stagger="100">{related}</div>
     </div>
@@ -378,8 +379,8 @@ def build_article():
 '''
     out = page(root, 'After the Storm: What to Document Before You Call Your Insurer',
                'A Florida property insurance attorney explains what to photograph, save and write down after storm damage, before you call your insurance company.',
-               g[4], m, 'guides', root + 'guides/', extra_css=ARTICLE_CSS)
+               g[4], m, 'blog', root + 'blog/', extra_css=ARTICLE_CSS)
     out = out.replace('<option>Property damage or insurance claim</option>', '<option selected>Property damage or insurance claim</option>', 1)
-    os.makedirs('guides/after-the-storm', exist_ok=True)
-    open('guides/after-the-storm/index.html', 'w', encoding='utf-8', newline='\n').write(out)
+    os.makedirs('blog/after-the-storm', exist_ok=True)
+    open('blog/after-the-storm/index.html', 'w', encoding='utf-8', newline='\n').write(out)
     print('wrote article')

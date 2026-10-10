@@ -364,7 +364,8 @@
   .way{display:flex;flex-direction:column;padding-top:28px;border-top:1px solid var(--line);position:relative}
   .way::before{content:"";position:absolute;left:0;top:-1px;width:48px;height:2px;background:var(--royal)}
   .way .label{color:var(--royal);margin-bottom:24px}
-  .way h3{font-size:clamp(26px,2.1vw,32px);line-height:1.2;margin-bottom:14px;font-variant-numeric:lining-nums;overflow-wrap:anywhere}
+  .way h3{font-size:clamp(22px,1.75vw,28px);line-height:1.25;margin-bottom:14px;font-variant-numeric:lining-nums}
+  .way h3.nowrap{white-space:nowrap}
   .way h3 a{text-decoration:none}
   .way p{margin:0 0 24px;font-size:16px;color:var(--slate)}
   .way .more{margin-top:auto;color:var(--navy);align-self:flex-start;background-color:transparent;border:0;padding:0;cursor:pointer}
@@ -400,7 +401,7 @@
         <div class="sub-menu"><a href="../about/">Our firm</a><a href="../about/lazaro-de-la-noval/">Lazaro De La Noval</a><a href="../about/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></div></div>
       <div class="has-sub"><a class="sweep" href="../practice-areas/">Practice areas<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="sub-menu"><a href="../practice-areas/">All practice areas</a><a href="../practice-areas/property-damage/">Property &amp; insurance</a><a href="../practice-areas/personal-injury/">Personal injury</a><a href="../practice-areas/family-law/">Family law</a></div></div>
-      <a class="sweep" href="../guides/">Guides</a>
+      <a class="sweep" href="../blog/">Blog</a>
       <a class="sweep" href="../contact/" aria-current="page">Contact</a>
       <a class="btn btn-ghost" href="#review">Request a case review</a>
     </nav>
@@ -426,7 +427,7 @@
       </div>
       <div class="wgrid" data-stagger="100">
         <div class="way" data-reveal><span class="label">Call</span><h3><a class="sweep" href="tel:+17862578847">(786) 257-8847</a></h3><p>Monday to Friday, 8:30 AM to 5:00 PM. Closed weekends.</p><a class="more sweep nudge" href="tel:+17862578847">Call the firm <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
-        <div class="way" data-reveal><span class="label">Email</span><h3><a class="sweep" href="mailto:LD@delanovalpa.com">LD@delanovalpa.com</a></h3><p>Send questions or documents at any time, and we will follow up during office hours.</p><a class="more sweep nudge" href="mailto:LD@delanovalpa.com">Send an email <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
+        <div class="way" data-reveal><span class="label">Email</span><h3 class="nowrap"><a class="sweep" href="mailto:LD@delanovalpa.com">LD@delanovalpa.com</a></h3><p>Send questions or documents at any time, and we will follow up during office hours.</p><a class="more sweep nudge" href="mailto:LD@delanovalpa.com">Send an email <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
         <div class="way" data-reveal><span class="label">Visit</span><h3>8780 NW 18th Terrace, Doral, Florida 33172</h3><p>Please call ahead to schedule a meeting at the office.</p><a class="more sweep nudge" href="https://www.google.com/maps/dir/?api=1&amp;destination=8780+NW+18th+Terrace,+Doral,+FL+33172" target="_blank" rel="noopener">Get directions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
         <div class="way" data-reveal><span class="label">Chat</span><h3>Day or night</h3><p>Our AI assistant answers common questions and takes your details for an attorney, in English or Spanish.</p><button class="more sweep nudge" type="button" data-open-chat>Start a chat <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button></div>
       </div>
@@ -495,7 +496,7 @@
     </div>
     <div><h3>Practice</h3><ul><li><a class="sweep" href="../practice-areas/property-damage/">Property &amp; insurance</a></li><li><a class="sweep" href="../practice-areas/personal-injury/">Personal injury</a></li><li><a class="sweep" href="../practice-areas/family-law/">Family law</a></li></ul></div>
     <div><h3>Attorneys</h3><ul><li><a class="sweep" href="../about/lazaro-de-la-noval/">Lazaro De La Noval</a></li><li><a class="sweep" href="../about/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></li></ul></div>
-    <div><h3>Firm</h3><ul><li><a class="sweep" href="../about/">About</a></li><li><a class="sweep" href="../guides/">Guides</a></li><li><a class="sweep" href="../faqs/">FAQs</a></li><li><a class="sweep" href="../contact/">Contact</a></li></ul></div>
+    <div><h3>Firm</h3><ul><li><a class="sweep" href="../about/">About</a></li><li><a class="sweep" href="../blog/">Blog</a></li><li><a class="sweep" href="../faqs/">FAQs</a></li><li><a class="sweep" href="../contact/">Contact</a></li></ul></div>
     <div class="legal">
       <p>Attorney advertising. Prior results do not guarantee a similar outcome. Contacting the firm does not create an attorney-client relationship.</p>
       <p class="credits"><span>© <span data-year>2026</span> De La Noval, P.A. All rights reserved.</span><span class="agency"><span>Website Managed by <a class="sweep" href="https://www.spotmediamiami.com/" target="_blank" rel="noopener">Spot Media Group</a></span><span class="designer">Designed by <a class="sweep" href="https://mariomiralles.github.io/mario-miralles/" target="_blank" rel="noopener">M.F. Miralles LLC</a></span></span></p>

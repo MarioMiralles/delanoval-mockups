@@ -14,7 +14,7 @@ Each concept is a single homepage; menu links and buttons are placeholders.
 | `about/` | About page (inner page 1, 2026-10-09): firm story, how we work, partners with credentials, reviews wall, case review form. Draft copy pending Lazaro's review |
 | `about/lazaro-de-la-noval/`, `about/elizabeth-diaz-fernandez/` | Attorney profiles under About (same URLs as the current site). Generated from `about/index.html`'s shared CSS, header, form band and footer |
 | `practice-areas/` + `property-damage/`, `personal-injury/`, `family-law/` | Practice overview and the three practice pages (same URLs as the current site): case types, claim check, steps, FAQ, case review form |
-| `contact/`, `faqs/`, `guides/`, `guides/after-the-storm/` | Contact (ways to reach, form, map), FAQs (all topics), Guides index (filters) and one sample article. `/blog/` on the current site should redirect to `/guides/` |
+| `contact/`, `faqs/`, `blog/`, `blog/after-the-storm/` | Contact (ways to reach, form, map), FAQs (all topics), Blog index (filters) and one sample post. Same `/blog/` URL as the current site; in WordPress the article is the single-post template SiteStaffr posts will use |
 
 Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `#3957ff`, ice `#f5f7ff`, slate `#3b4855`, with Rubik for body text.
 
@@ -30,7 +30,7 @@ Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `
 ## Shared menu and footer
 
 `python tools/gen_site.py` (from the repo root) rewrites the menu and footer on every built page and rebuilds the
-practice, Contact, FAQs and Guides pages from the content in `tools/gen_site.py` and `tools/gen_more.py`. Edit content there,
+practice, Contact, FAQs and Blog pages from the content in `tools/gen_site.py` and `tools/gen_more.py`. Edit content there,
 not in the generated HTML. The homepage, About and attorney profiles are hand-edited; the script only touches their menu and footer.
 
 ## Viewing
