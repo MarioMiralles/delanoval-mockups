@@ -12,6 +12,7 @@ Each concept is a single homepage; menu links and buttons are placeholders.
 | `advocate/` | 4 · Advocate: Marcellus, case review form in the hero, working EN/ES switch, Google Maps footer |
 | `homepage/` | Merged homepage (Lazaro's pick, 2026-10-08): Concept 1 plus the guides (2), an injury and property claim check inside practice-area tabs (3), and the case review form and case types (4) |
 | `about/` | About page (inner page 1, 2026-10-09): firm story, how we work, partners with credentials, reviews wall, case review form. Draft copy pending Lazaro's review |
+| `about/lazaro-de-la-noval/`, `about/elizabeth-diaz-fernandez/` | Attorney profiles under About (same URLs as the current site). Generated from `about/index.html`'s shared CSS, header, form band and footer |
 
 Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `#3957ff`, ice `#f5f7ff`, slate `#3b4855`, with Rubik for body text.
 
