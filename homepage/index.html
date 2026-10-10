@@ -72,6 +72,24 @@
     .util .hide-sm{display:none}
   }
 
+  /* Dropdowns */
+  nav.main .has-sub{position:relative}
+  nav.main .has-sub>a{display:inline-flex;align-items:center;gap:8px}
+  nav.main .caret{flex:none;opacity:.7}
+  nav.main .sub-menu{position:absolute;top:100%;left:-26px;min-width:270px;margin-top:14px;padding:12px 0;background:#fff;color:var(--navy);box-shadow:0 24px 48px rgba(3,16,31,.2);opacity:0;visibility:hidden;transform:translate3d(0,8px,0);transition:opacity .4s var(--ease-out),transform .4s var(--ease-out),visibility .4s}
+  nav.main .sub-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+  nav.main .has-sub:hover .sub-menu,nav.main .has-sub:focus-within .sub-menu{opacity:1;visibility:visible;transform:none}
+  nav.main .sub-menu a{display:block;padding:12px 26px;font:300 15px/1.3 var(--sans);letter-spacing:.01em;text-transform:none;text-decoration:none;transition:background .3s,color .3s}
+  nav.main .sub-menu a:hover,nav.main .sub-menu a:focus-visible{background:var(--ice);color:var(--royal)}
+  @media (max-width:1100px){
+    nav.main{justify-content:safe center;overflow-y:auto;padding:120px 0 40px}
+    nav.main .has-sub{display:flex;flex-direction:column;align-items:center}
+    nav.main .caret{display:none}
+    nav.main .sub-menu{position:static;min-width:0;margin:0;padding:0 0 12px;background:none;color:#a9b6cc;box-shadow:none;opacity:1;visibility:visible;transform:none;display:flex;flex-direction:column;align-items:center}
+    nav.main .sub-menu::before{display:none}
+    nav.main .sub-menu a{padding:5px 0;font-size:16px}
+    nav.main .sub-menu a:hover,nav.main .sub-menu a:focus-visible{background:none;color:#fff}
+  }
   .logo,.menu-btn{transition:width .6s var(--ease-out),min-height .6s var(--ease-out),padding .6s var(--ease-out)}
   @media (max-width:760px){
     .is-scrolled .bar{min-height:58px}
@@ -328,10 +346,12 @@
       <img class="light" src="../assets/img/logo-wordmark-navy.png" alt="" width="1000" height="171">
     </a>
     <nav class="main" id="nav" aria-label="Main">
-      <a class="sweep" href="../about/">About</a>
-      <a class="sweep" href="#practice">Practice areas</a>
-      <a class="sweep" href="#attorneys">Attorneys</a>
+      <div class="has-sub"><a class="sweep" href="../about/">About<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="sub-menu"><a href="../about/">Our firm</a><a href="../about/#lazaro">Lazaro De La Noval</a><a href="../about/#elizabeth">Elizabeth Diaz Fernandez</a></div></div>
+      <div class="has-sub"><a class="sweep" href="#practice">Practice areas<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="sub-menu"><a href="#practice" data-tab="property">Property &amp; insurance</a><a href="#practice" data-tab="injury">Personal injury</a><a href="#practice" data-tab="family">Family law</a></div></div>
       <a class="sweep" href="#guides">Guides</a>
+      <a class="sweep" href="#review">Contact</a>
       <a class="btn btn-ghost" href="#review">Request a case review</a>
     </nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -477,21 +497,21 @@
       </div>
       <div class="people">
         <article class="person">
-          <a class="ph" href="#" aria-label="Lazaro De La Noval, full profile"><img src="../assets/img/lazaro-seated.webp" alt="" width="800" height="1000" loading="lazy"></a>
+          <a class="ph" href="../about/#lazaro" aria-label="Lazaro De La Noval, full profile"><img src="../assets/img/lazaro-seated.webp" alt="" width="800" height="1000" loading="lazy"></a>
           <div data-reveal>
             <div class="label">Founder &amp; Managing Partner</div>
-            <h3><a href="#">Lazaro De La Noval</a></h3>
+            <h3><a href="../about/#lazaro">Lazaro De La Noval</a></h3>
             <p>Began his career defending insurance companies and has represented clients in insurance disputes since 2016. J.D., St. Thomas University College of Law.</p>
-            <a class="btn btn-navy nudge" href="#">View full profile <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-navy nudge" href="../about/#lazaro">View full profile <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
           </div>
         </article>
         <article class="person">
-          <a class="ph" href="#" aria-label="Elizabeth Diaz Fernandez, full profile"><img src="../assets/img/elizabeth-seated.webp" alt="" width="800" height="1000" loading="lazy"></a>
+          <a class="ph" href="../about/#elizabeth" aria-label="Elizabeth Diaz Fernandez, full profile"><img src="../assets/img/elizabeth-seated.webp" alt="" width="800" height="1000" loading="lazy"></a>
           <div data-reveal style="--d:150ms">
             <div class="label">Partner</div>
-            <h3><a href="#">Elizabeth Diaz Fernandez</a></h3>
+            <h3><a href="../about/#elizabeth">Elizabeth Diaz Fernandez</a></h3>
             <p>Former Assistant State Attorney in Miami-Dade who has litigated hundreds of property insurance and personal injury cases. J.D., FIU College of Law.</p>
-            <a class="btn btn-navy nudge" href="#">View full profile <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-navy nudge" href="../about/#elizabeth">View full profile <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
           </div>
         </article>
       </div>
@@ -598,7 +618,7 @@
       <p style="margin:0;max-width:340px;font-size:15px">Law you can understand. Serving Doral, Miami-Dade and clients across Florida.</p>
     </div>
     <div><h3>Practice</h3><ul><li><a class="sweep" href="#practice" data-tab="property">Property &amp; insurance</a></li><li><a class="sweep" href="#practice" data-tab="injury">Personal injury</a></li><li><a class="sweep" href="#practice" data-tab="family">Family law</a></li></ul></div>
-    <div><h3>Attorneys</h3><ul><li><a class="sweep" href="#">Lazaro De La Noval</a></li><li><a class="sweep" href="#">Elizabeth Diaz Fernandez</a></li></ul></div>
+    <div><h3>Attorneys</h3><ul><li><a class="sweep" href="../about/#lazaro">Lazaro De La Noval</a></li><li><a class="sweep" href="../about/#elizabeth">Elizabeth Diaz Fernandez</a></li></ul></div>
     <div><h3>Firm</h3><ul><li><a class="sweep" href="../about/">About</a></li><li><a class="sweep" href="#guides">Guides</a></li><li><a class="sweep" href="#words">Reviews</a></li><li><a class="sweep" href="#review">Case review</a></li></ul></div>
     <div class="legal">
       <p>Attorney advertising. Prior results do not guarantee a similar outcome. Contacting the firm does not create an attorney-client relationship.</p>
