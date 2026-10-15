@@ -17,7 +17,7 @@ CARDS_CSS = '''
 '''
 
 GUIDES = [
-    ('after-the-storm', 'property', 'Property claims', '5 min read', 'hurricane-palms.webp', 1024, 683, 'After the storm: what to document before you call your insurer', None),
+    ('after-the-storm', 'property', 'Property claims', '5 min read', 'everglades-storm.webp', 1920, 1316, 'After the storm: what to document before you call your insurer', None),
     ('#', 'injury', 'Personal injury', '4 min read', 'brickell-night.webp', 1024, 768, 'Hurt in a crash? Five things to do in the first week', None),
     ('#', 'es', 'En español', '5 min', 'pen.webp', 1024, 769, '¿Le negaron su reclamo de seguro? Sus próximos pasos', 'es'),
     ('#', 'property', 'Property claims', '6 min read', 'skyline-storm.webp', 1024, 511, 'Underpaid roof claim? How to read your insurer\'s estimate', None),

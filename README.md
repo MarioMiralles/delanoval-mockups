@@ -53,17 +53,26 @@ Published with GitHub Pages from the `main` branch root (`.nojekyll` keeps the f
 
 ## Photo credits
 
-All stock photography is public domain (CC0); no attribution is required, but sources are listed here.
+All stock photography is public domain or CC0, so no attribution is required. Each license was confirmed at its source
+on 2026-10-15 (the full list, with where each photo is used, is in the WordPress build repo's `docs/stock-photos.md`).
 
-| File | Photographer | Source |
-| --- | --- | --- |
-| `brickell-golden.webp` | Wilfredor | [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=165427769) |
-| `brickell-river.webp` | Carol M. Highsmith | [rawpixel](https://www.rawpixel.com/image/3094654/free-photo-image-miami-skyline) |
-| `brickell-night.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/5961024/free-public-domain-cc0-photo) |
-| `skyline-night.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/5961045/free-public-domain-cc0-photo) |
-| `skyline-storm.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/5947222/free-public-domain-cc0-photo) |
-| `hurricane-palms.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/8726597/photo-image-palm-tree-public-domain) |
-| `library.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/3305593/free-photo-image-law-library-book) |
-| `pen.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/3298903/free-photo-image-cc0-creative-commons) |
-| `colonnade.webp` | Bob Richards | [StockSnap](https://stocksnap.io/photo/marble-pillars-IL9AITG3XV) |
-| `glass-tower.webp` | FOCA Stock | [StockSnap](https://stocksnap.io/photo/glass-building-CRXV0EN5I8) |
+| File | Author | Source | License |
+| --- | --- | --- | --- |
+| `brickell-golden.webp` | Wilfredor | [Wikimedia Commons](https://commons.wikimedia.org/w/index.php?curid=165427769) | CC0 |
+| `brickell-river.webp` | Carol M. Highsmith | [rawpixel](https://www.rawpixel.com/image/3094654/free-photo-image-miami-skyline) | Public domain |
+| `brickell-night.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/5961024/free-public-domain-cc0-photo) | CC0 |
+| `skyline-night.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/5961045/free-public-domain-cc0-photo) | CC0 |
+| `skyline-storm.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/5947222/free-public-domain-cc0-photo) | CC0 |
+| `library.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/3305593/free-photo-image-law-library-book) | CC0 |
+| `pen.webp` | Unknown | [rawpixel](https://www.rawpixel.com/image/3298903/free-photo-image-cc0-creative-commons) | CC0 |
+| `colonnade.webp` | Bob Richards | [StockSnap](https://stocksnap.io/photo/marble-pillars-IL9AITG3XV) | CC0 |
+| `glass-tower.webp` | FOCA Stock | [StockSnap](https://stocksnap.io/photo/glass-building-CRXV0EN5I8) | CC0 |
+| `storm-roof.webp` | Bob Epstein, FEMA | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:FEMA_-_2440_-_Photograph_by_Bob_Epstein_taken_on_08-24-1992_in_Florida.jpg) | Public domain (U.S. government) |
+| `blue-roof-keys.webp` | U.S. DHS | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Operation_Blue_Roof_continues_in_Florida_Keys_(37478879700).jpg) | Public domain (U.S. government) |
+| `i95-aerial.webp` | B137 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Miami_traffic_aerial_I-95_North_downtown.jpg) | CC0 |
+| `biscayne-sunset.webp` | National Park Service | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Biscayne_National_Park_H-adams_key_sunset.jpg) | Public domain (U.S. government) |
+| `miami-waterfront.webp` | Gaetano Cessati | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Miami_waterfront_skyline_(Unsplash).jpg) | CC0 |
+| `brickell-day.webp` | Daniel Christensen | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Brickell_skyline_2012.jpg) | Public domain |
+| `everglades-storm.webp` | National Park Service | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:WEA_glades_storm_1282,_NPSPhoto,_Haugen,_Oct_64_(9257940384).jpg) | Public domain (U.S. government) |
+
+`hurricane-palms.webp` was removed on 2026-10-15: its CC0 status couldn't be confirmed at the source.

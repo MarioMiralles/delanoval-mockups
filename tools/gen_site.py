@@ -206,7 +206,6 @@ def page(root, title, desc, preload, main, section, current, check=False, extra_
     <div class="wrap">
       <span class="hide-sm">Se habla español</span>
       <a href="tel:+17862578847">(786) 257-8847</a>
-      <span class="lang"><a href="#" aria-current="true">EN</a><a href="#" lang="es">ES</a></span>
     </div>
   </div>
   <div class="wrap bar">
@@ -269,7 +268,7 @@ SUBS = {
  'property-damage': dict(
     title='Property &amp; Insurance Claims', key='property', case='Property damage or insurance claim',
     desc='Denied, delayed or underpaid property insurance claim in Florida? De La Noval, P.A. represents homeowners and businesses in hurricane, water, roof and fire claims. Se habla español.',
-    h1a='Property &amp;', h1b='insurance <em>claims.</em>', photo=('hurricane-palms.webp', 1024, 683),
+    h1a='Property &amp;', h1b='insurance <em>claims.</em>', photo=('storm-roof.webp', 1024, 683),
     lede='When a storm, leak or fire damages your home or business and your insurer denies, delays or underpays the claim, we pursue what your policy promised.',
     big='Your home is likely your most important investment. <em>Your policy should protect it the way it promised.</em>',
     body=['You buy insurance with the reasonable expectation that your insurer will pay a covered claim. Yet every year, residential and commercial claims that should be covered are denied, leaving owners wondering how they will pay for the repairs.',
@@ -463,7 +462,7 @@ def build_overview():
     m = hero(root, [(root + 'homepage/', 'Home'), 'Practice areas'], 'How we', '<em>can help.</em>',
              'Three practice areas, one standard: you will always know where your case stands and what happens next.', 'skyline-storm.webp', 1024, 511)
     rows = [
-        ('property-damage', 'hurricane-palms.webp', 1024, 683, 'Storm, water, fire and roof claims that were denied, delayed or underpaid, for homes and businesses.', ['Hurricane &amp; wind damage', 'Water damage &amp; leaks', 'Roof, fire &amp; smoke claims', 'Commercial property']),
+        ('property-damage', 'storm-roof.webp', 1024, 683, 'Storm, water, fire and roof claims that were denied, delayed or underpaid, for homes and businesses.', ['Hurricane &amp; wind damage', 'Water damage &amp; leaks', 'Roof, fire &amp; smoke claims', 'Commercial property']),
         ('personal-injury', 'brickell-night.webp', 1024, 768, 'Car accidents, slips and falls and other injuries, pursued for the full compensation the law allows.', ['Car, truck &amp; rideshare accidents', 'Pedestrian &amp; bicycle accidents', 'Slip and fall', 'Premises injuries']),
         ('family-law', 'pen.webp', 1024, 769, 'Divorce, time-sharing and support, handled with discretion, whether the answer is agreement or court.', ['Divorce', 'Parenting plans &amp; time-sharing', 'Child support &amp; alimony', 'Modifications']),
     ]
@@ -504,3 +503,35 @@ build_contact()
 build_faqs()
 build_blog()
 build_article()
+
+
+# ---------- a different photo behind the case review band in each section (matches the WordPress theme) ----------
+REVIEW_BG = {
+    'homepage': 'skyline-night.webp',
+    'about': 'miami-waterfront.webp',
+    'practice-areas': 'brickell-river.webp',
+    'practice-areas/property-damage': 'blue-roof-keys.webp',
+    'practice-areas/personal-injury': 'i95-aerial.webp',
+    'practice-areas/family-law': 'biscayne-sunset.webp',
+    'contact': 'brickell-day.webp',
+    'faqs': 'everglades-storm.webp',
+    'blog': 'brickell-day.webp',
+}
+
+
+def vary_review_backgrounds():
+    for root, _, files in os.walk('.'):
+        if 'index.html' not in files or root in ('.',) or root.startswith(('./counsel', './editorial', './other-side', './advocate', './.git')):
+            continue
+        rel = root[2:].replace(os.sep, '/')
+        key = rel if rel in REVIEW_BG else rel.split('/')[0]
+        if key not in REVIEW_BG:
+            continue
+        p = os.path.join(root, 'index.html')
+        s = open(p, encoding='utf-8').read()
+        s2 = re.sub(r'(<section class="review"[^>]*>\s*<div class="bg"[^>]*><img src="[^"]*/stock/)[^"]+(")', lambda m: m.group(1) + REVIEW_BG[key] + m.group(2), s, count=1)
+        if s2 != s:
+            open(p, 'w', encoding='utf-8', newline='\n').write(s2)
+
+
+vary_review_backgrounds()
