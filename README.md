@@ -15,6 +15,7 @@ Each concept is a single homepage; menu links and buttons are placeholders.
 | `about/lazaro-de-la-noval/`, `about/elizabeth-diaz-fernandez/` | Attorney profiles under About (same URLs as the current site). Generated from `about/index.html`'s shared CSS, header, form band and footer |
 | `practice-areas/` + `property-damage/`, `personal-injury/`, `family-law/` | Practice overview and the three practice pages (same URLs as the current site): case types, claim check, steps, FAQ, case review form |
 | `contact/`, `faqs/`, `blog/`, `blog/after-the-storm/` | Contact (ways to reach, form, map), FAQs (all topics), Blog index (filters) and one sample post. Same `/blog/` URL as the current site; in WordPress the article is the single-post template SiteStaffr posts will use |
+| `es/` + `nosotros/`, `areas-de-practica/`, `contacto/`, `preguntas-frecuentes/` | Spanish version of the ten designed pages (2026-10-15), linked by the EN/ES switch on every page. **Generated, don't hand-edit:** built from the English pages by `delanoval-wp/tools/es/build_es.py` with the translation table `es.json`, which also builds the theme's Spanish templates |
 
 Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `#3957ff`, ice `#f5f7ff`, slate `#3b4855`, with Rubik for body text.
 
