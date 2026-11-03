@@ -132,6 +132,8 @@
   .statement .wrap{padding-top:clamp(96px,12vw,168px);padding-bottom:clamp(80px,10vw,136px)}
   .statement p.big{margin:0;font:500 clamp(34px,4.2vw,64px)/1.16 var(--serif);color:var(--navy)}
   .statement p.big em{color:var(--royal)}
+  .statement p.sub{margin:clamp(28px,3vw,40px) 0 0;max-width:860px;font-size:clamp(18px,1.5vw,22px);line-height:1.6;color:var(--slate)}
+  .statement p.close{margin:clamp(20px,2vw,28px) 0 0;max-width:860px;font:italic 500 clamp(26px,2.4vw,36px)/1.25 var(--serif);color:var(--royal)}
   .figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(64px,8vw,104px);border-top:1px solid #c9d2e6}
   .figures>div{padding:34px 24px 0 0}
   .figures>div+div{padding-left:28px;border-left:1px solid #c9d2e6}
@@ -150,7 +152,7 @@
   /* Practice areas: tabs (case types) with claim checks */
   .practice{background:var(--deep);color:#fff}
   .practice .wrap{padding-top:clamp(96px,11vw,152px);padding-bottom:clamp(96px,11vw,152px)}
-  .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(16px,2.4vw,40px);margin-bottom:clamp(40px,5vw,64px)}
+  .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(16px,2.4vw,40px);margin-bottom:clamp(40px,5vw,64px)}
   .tab{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:26px 0 0;border:0;border-top:1px solid var(--line-dark);background:none;color:#8090ac;text-align:left;cursor:pointer;transition:color .5s var(--ease-out)}
   .tab::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--royal-tint);transform:scaleX(0);transform-origin:left center;transition:transform .8s var(--ease-out)}
   .tab:hover{color:#dfe5f2}
@@ -159,6 +161,7 @@
   .tab .no{font:400 12px/1 var(--sans);letter-spacing:.32em;color:var(--royal-tint)}
   .tab .name{font:500 clamp(26px,2.6vw,40px)/1.05 var(--serif)}
   .tab .short{display:none}
+  @media (max-width:900px){.tabs{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}}
   @media (max-width:640px){.tab .full{display:none}.tab .short{display:inline}.tab{padding-top:20px}}
 
   .panel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,88px);align-items:stretch}
@@ -191,7 +194,7 @@
   .progress span.on{background:var(--royal-tint);height:2px;margin-top:-.5px}
   .check .step{transition:opacity .35s var(--ease-out),transform .35s var(--ease-out)}
   .check .step.swap{opacity:0;transform:translate3d(0,10px,0)}
-  .check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
+  .check h3,.check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
   .check .choices{display:flex;flex-wrap:wrap;gap:14px}
   .check .choices .btn{min-width:140px}
   .check .result p{margin:-14px 0 30px;color:#dfe5f2;max-width:520px}
@@ -349,7 +352,7 @@
       <div class="has-sub"><a class="sweep" href="../about/">About<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="sub-menu"><a href="../about/">Our firm</a><a href="../about/lazaro-de-la-noval/">Lazaro De La Noval</a><a href="../about/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></div></div>
       <div class="has-sub"><a class="sweep" href="../practice-areas/">Practice areas<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="sub-menu"><a href="../practice-areas/">All practice areas</a><a href="../practice-areas/property-damage/">Property &amp; insurance</a><a href="../practice-areas/personal-injury/">Personal injury</a><a href="../practice-areas/family-law/">Family law</a></div></div>
+        <div class="sub-menu"><a href="../practice-areas/">All practice areas</a><a href="../practice-areas/property-damage/">Property insurance</a><a href="../practice-areas/personal-injury/">Personal injury</a><a href="../practice-areas/family-law/">Family law</a><a href="../practice-areas/commercial-litigation/">Commercial litigation</a></div></div>
       <a class="sweep" href="../blog/">Blog</a>
       <a class="sweep" href="../contact/">Contact</a>
       <a class="btn btn-ghost" href="#review">Request a case review</a>
@@ -362,7 +365,6 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="bg kenburns"><img src="../assets/img/stock/brickell-golden.webp" alt="" width="1920" height="1280" fetchpriority="high"></div>
     <div class="wrap">
-      <div class="label" data-load style="--d:200ms">Law firm · Doral, Florida</div>
       <h1 id="hero-title"><span class="line"><span style="--d:300ms">Law you can</span></span><span class="line"><span style="--d:450ms"><em>understand.</em></span></span></h1>
       <p class="lede" data-load style="--d:750ms">Property insurance disputes, personal injury, family law and commercial litigation, explained plainly and pursued in full.</p>
       <div class="actions" data-load style="--d:900ms">
@@ -384,7 +386,9 @@
 
   <section class="statement" id="firm" aria-label="The firm">
     <div class="wrap">
-      <p class="big" data-reveal>A firm for the moments that matter: the storm that damaged your home, the accident that changed your year, the family decision you never planned for. <em>We make the law clear, then we see it through.</em></p>
+      <p class="big" data-reveal>A law firm for life's moments that matter most.</p>
+      <p class="sub" data-reveal style="--d:100ms">Whether you're facing damage to your home or business, an accident that changes your life, a complex commercial dispute, or an unexpected family matter, we're here to provide the guidance, advocacy, and representation you deserve.</p>
+      <p class="close" data-reveal style="--d:200ms">We make the law clear, protect what matters most, and stand by your side every step of the way.</p>
       <div class="figures" data-stagger="120">
         <div data-reveal><div class="n" data-count="1000" data-suffix="+">1,000+</div><div class="t">Cases resolved</div></div>
         <div data-reveal><div class="n" data-count="25" data-prefix="$" data-suffix="M+">$25M+</div><div class="t">Recovered by our attorneys</div></div>
@@ -401,20 +405,21 @@
         <div class="label" data-reveal>Practice areas</div>
         <div>
           <h2 id="practice-title" data-reveal style="--d:100ms">How we can help</h2>
-          <p data-reveal style="--d:200ms">Three practice areas, one standard: you will always know where your case stands and what happens next.</p>
+          <p data-reveal style="--d:200ms">Four practice areas, one standard: you will always know where your case stands and what happens next.</p>
         </div>
       </div>
 
       <div class="tabs" role="tablist" aria-label="Practice areas" data-stagger="100">
-        <button class="tab" type="button" role="tab" id="tab-property" aria-controls="panel-property" aria-selected="true" data-reveal><span class="no">01</span><span class="name"><span class="full">Property &amp; insurance</span><span class="short">Property</span></span></button>
+        <button class="tab" type="button" role="tab" id="tab-property" aria-controls="panel-property" aria-selected="true" data-reveal><span class="no">01</span><span class="name"><span class="full">Property insurance</span><span class="short">Property</span></span></button>
         <button class="tab" type="button" role="tab" id="tab-injury" aria-controls="panel-injury" aria-selected="false" tabindex="-1" data-reveal><span class="no">02</span><span class="name"><span class="full">Personal injury</span><span class="short">Injury</span></span></button>
         <button class="tab" type="button" role="tab" id="tab-family" aria-controls="panel-family" aria-selected="false" tabindex="-1" data-reveal><span class="no">03</span><span class="name"><span class="full">Family law</span><span class="short">Family</span></span></button>
+        <button class="tab" type="button" role="tab" id="tab-commercial" aria-controls="panel-commercial" aria-selected="false" tabindex="-1" data-reveal><span class="no">04</span><span class="name"><span class="full">Commercial litigation</span><span class="short">Business</span></span></button>
       </div>
 
       <div class="panel" role="tabpanel" id="panel-property" aria-labelledby="tab-property" data-reveal="fade" style="--d:300ms">
         <div class="panel-copy">
           <div class="label">Most requested</div>
-          <h3>Property &amp; insurance claims</h3>
+          <h3>Property insurance claims and litigation</h3>
           <p>Storm, water, fire and roof claims that were denied, delayed or underpaid, for homes and businesses.</p>
           <ul class="cases">
             <li><a href="../practice-areas/property-damage/">Hurricane &amp; wind damage<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
@@ -493,6 +498,26 @@
         <div>
           <h2 id="team-title" data-reveal style="--d:100ms">The partners</h2>
           <p data-reveal style="--d:200ms">Both are admitted in Florida state and federal court, and both speak with their clients directly.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-commercial" aria-labelledby="tab-commercial" hidden>
+        <div class="panel-copy">
+          <div class="label">Business</div>
+          <h3>Commercial litigation</h3>
+          <p>Contract, partnership and business disputes, resolved through negotiation when possible and litigation when necessary.</p>
+          <ul class="cases">
+            <li><a href="../practice-areas/commercial-litigation/">Breach of contract<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="../practice-areas/commercial-litigation/">Partnership &amp; shareholder disputes<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="../practice-areas/commercial-litigation/">Commercial lease disputes<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="../practice-areas/commercial-litigation/">Commercial insurance disputes<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+          </ul>
+          <a class="more sweep nudge" href="../practice-areas/commercial-litigation/">Explore commercial litigation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="panel-card">
+          <div class="ph"><img src="../assets/img/stock/glass-tower.webp" alt="" width="960" height="720" loading="lazy"></div>
+          <div>
+            <div class="label" style="color:#c3cdff;margin-bottom:24px">For businesses &amp; owners</div>
+            <blockquote>Every business dispute begins with understanding what is at stake.</blockquote>
+            <a class="btn btn-ghost" href="#review">Request a case review</a>
+          </div>
         </div>
       </div>
       <div class="people">
@@ -590,7 +615,7 @@
           <label class="field"><span>Email</span><input type="email" autocomplete="email"></label>
           <label class="field full"><span>Type of case</span>
             <select id="case-type">
-              <option>Property damage or insurance claim</option>
+              <option>Property damage insurance claim</option>
               <option>Car accident</option>
               <option>Truck or rideshare accident</option>
               <option>Slip and fall</option>
@@ -616,9 +641,9 @@
   <div class="wrap">
     <div>
       <a href="index.html" style="display:inline-block"><img src="../assets/img/logo-wordmark-white.png" alt="De La Noval, P.A., Attorneys at Law, home" width="1000" height="171" loading="lazy"></a>
-      <p style="margin:0;max-width:340px;font-size:15px">Law you can understand. Serving Doral, Miami-Dade and clients across Florida.</p>
+      <p style="margin:0;max-width:340px;font-size:15px">Law you can understand. Serving clients across Florida.</p>
     </div>
-    <div><h3>Practice</h3><ul><li><a class="sweep" href="../practice-areas/property-damage/">Property &amp; insurance</a></li><li><a class="sweep" href="../practice-areas/personal-injury/">Personal injury</a></li><li><a class="sweep" href="../practice-areas/family-law/">Family law</a></li></ul></div>
+    <div><h3>Practice</h3><ul><li><a class="sweep" href="../practice-areas/property-damage/">Property insurance</a></li><li><a class="sweep" href="../practice-areas/personal-injury/">Personal injury</a></li><li><a class="sweep" href="../practice-areas/family-law/">Family law</a></li><li><a class="sweep" href="../practice-areas/commercial-litigation/">Commercial litigation</a></li></ul></div>
     <div><h3>Attorneys</h3><ul><li><a class="sweep" href="../about/lazaro-de-la-noval/">Lazaro De La Noval</a></li><li><a class="sweep" href="../about/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></li></ul></div>
     <div><h3>Firm</h3><ul><li><a class="sweep" href="../about/">About</a></li><li><a class="sweep" href="../blog/">Blog</a></li><li><a class="sweep" href="../faqs/">FAQs</a></li><li><a class="sweep" href="../contact/">Contact</a></li></ul></div>
     <div class="legal">

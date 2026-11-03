@@ -13,9 +13,9 @@ Each concept is a single homepage; menu links and buttons are placeholders.
 | `homepage/` | Merged homepage (Lazaro's pick, 2026-10-08): Concept 1 plus the guides (2), an injury and property claim check inside practice-area tabs (3), and the case review form and case types (4) |
 | `about/` | About page (inner page 1, 2026-10-09): firm story, how we work, partners with credentials, reviews wall, case review form. Draft copy pending Lazaro's review |
 | `about/lazaro-de-la-noval/`, `about/elizabeth-diaz-fernandez/` | Attorney profiles under About (same URLs as the current site). Generated from `about/index.html`'s shared CSS, header, form band and footer |
-| `practice-areas/` + `property-damage/`, `personal-injury/`, `family-law/` | Practice overview and the three practice pages (same URLs as the current site): case types, claim check, steps, FAQ, case review form |
+| `practice-areas/` + `property-damage/`, `personal-injury/`, `family-law/`, `commercial-litigation/` | Practice overview and the four practice pages (the first three keep the current site's URLs; Commercial Litigation was added 2026-11-03 at Lazaro's request): case types, claim check, steps, FAQ, case review form |
 | `contact/`, `faqs/`, `blog/`, `blog/after-the-storm/` | Contact (ways to reach, form, map), FAQs (all topics), Blog index (filters) and one sample post. Same `/blog/` URL as the current site; in WordPress the article is the single-post template SiteStaffr posts will use |
-| `es/` + `nosotros/`, `areas-de-practica/`, `contacto/`, `preguntas-frecuentes/` | Spanish version of the ten designed pages (2026-10-15), linked by the EN/ES switch on every page. **Generated, don't hand-edit:** built from the English pages by `delanoval-wp/tools/es/build_es.py` with the translation table `es.json`, which also builds the theme's Spanish templates |
+| `es/` + `nosotros/`, `areas-de-practica/`, `contacto/`, `preguntas-frecuentes/` | Spanish version of the eleven designed pages (2026-10-15), linked by the EN/ES switch on every page. **Generated, don't hand-edit:** built from the English pages by `delanoval-wp/tools/es/build_es.py` with the translation table `es.json`, which also builds the theme's Spanish templates |
 
 Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `#3957ff`, ice `#f5f7ff`, slate `#3b4855`, with Rubik for body text.
 
@@ -33,6 +33,9 @@ Every concept uses the firm's existing brand: logo, navy `#051b34`, royal blue `
 `python tools/gen_site.py` (from the repo root) rewrites the menu and footer on every built page and rebuilds the
 practice, Contact, FAQs and Blog pages from the content in `tools/gen_site.py` and `tools/gen_more.py`. Edit content there,
 not in the generated HTML. The homepage, About and attorney profiles are hand-edited; the script only touches their menu and footer.
+The script drops the EN/ES switch from the pages it rebuilds, so after it run, from the WordPress build repo,
+`python tools/es/add_switch_to_preview.py`, then `python theme/delanoval/tools/convert_mockups.py` (templates follow
+the preview) and `python -I tools/es/build_es.py build`.
 
 ## Viewing
 

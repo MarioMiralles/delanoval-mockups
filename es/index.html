@@ -132,6 +132,8 @@
   .statement .wrap{padding-top:clamp(96px,12vw,168px);padding-bottom:clamp(80px,10vw,136px)}
   .statement p.big{margin:0;font:500 clamp(34px,4.2vw,64px)/1.16 var(--serif);color:var(--navy)}
   .statement p.big em{color:var(--royal)}
+  .statement p.sub{margin:clamp(28px,3vw,40px) 0 0;max-width:860px;font-size:clamp(18px,1.5vw,22px);line-height:1.6;color:var(--slate)}
+  .statement p.close{margin:clamp(20px,2vw,28px) 0 0;max-width:860px;font:italic 500 clamp(26px,2.4vw,36px)/1.25 var(--serif);color:var(--royal)}
   .figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(64px,8vw,104px);border-top:1px solid #c9d2e6}
   .figures>div{padding:34px 24px 0 0}
   .figures>div+div{padding-left:28px;border-left:1px solid #c9d2e6}
@@ -150,7 +152,7 @@
   /* Practice areas: tabs (case types) with claim checks */
   .practice{background:var(--deep);color:#fff}
   .practice .wrap{padding-top:clamp(96px,11vw,152px);padding-bottom:clamp(96px,11vw,152px)}
-  .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(16px,2.4vw,40px);margin-bottom:clamp(40px,5vw,64px)}
+  .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(16px,2.4vw,40px);margin-bottom:clamp(40px,5vw,64px)}
   .tab{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:26px 0 0;border:0;border-top:1px solid var(--line-dark);background:none;color:#8090ac;text-align:left;cursor:pointer;transition:color .5s var(--ease-out)}
   .tab::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--royal-tint);transform:scaleX(0);transform-origin:left center;transition:transform .8s var(--ease-out)}
   .tab:hover{color:#dfe5f2}
@@ -159,6 +161,7 @@
   .tab .no{font:400 12px/1 var(--sans);letter-spacing:.32em;color:var(--royal-tint)}
   .tab .name{font:500 clamp(26px,2.6vw,40px)/1.05 var(--serif)}
   .tab .short{display:none}
+  @media (max-width:900px){.tabs{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}}
   @media (max-width:640px){.tab .full{display:none}.tab .short{display:inline}.tab{padding-top:20px}}
 
   .panel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,88px);align-items:stretch}
@@ -191,7 +194,7 @@
   .progress span.on{background:var(--royal-tint);height:2px;margin-top:-.5px}
   .check .step{transition:opacity .35s var(--ease-out),transform .35s var(--ease-out)}
   .check .step.swap{opacity:0;transform:translate3d(0,10px,0)}
-  .check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
+  .check h3,.check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
   .check .choices{display:flex;flex-wrap:wrap;gap:14px}
   .check .choices .btn{min-width:140px}
   .check .result p{margin:-14px 0 30px;color:#dfe5f2;max-width:520px}
@@ -350,7 +353,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
       <div class="has-sub"><a class="sweep" href="nosotros/">Nosotros<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="sub-menu"><a href="nosotros/">La firma</a><a href="nosotros/lazaro-de-la-noval/">Lazaro De La Noval</a><a href="nosotros/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></div></div>
       <div class="has-sub"><a class="sweep" href="areas-de-practica/">Áreas de práctica<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="sub-menu"><a href="areas-de-practica/">Todas las áreas de práctica</a><a href="areas-de-practica/reclamos-de-propiedad/">Propiedad y seguros</a><a href="areas-de-practica/lesiones-personales/">Lesiones personales</a><a href="areas-de-practica/derecho-de-familia/">Derecho de familia</a></div></div>
+        <div class="sub-menu"><a href="areas-de-practica/">Todas las áreas de práctica</a><a href="areas-de-practica/reclamos-de-propiedad/">Seguros de propiedad</a><a href="areas-de-practica/lesiones-personales/">Lesiones personales</a><a href="areas-de-practica/derecho-de-familia/">Derecho de familia</a><a href="areas-de-practica/litigio-comercial/">Litigio comercial</a></div></div>
       <a class="sweep" href="../blog/">Blog</a>
       <a class="sweep" href="contacto/">Contacto</a>
       <a class="btn btn-ghost" href="#review">Revisión de su caso</a>
@@ -363,7 +366,6 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
   <section class="hero" aria-labelledby="hero-title">
     <div class="bg kenburns"><img src="../assets/img/stock/brickell-golden.webp" alt="" width="1920" height="1280" fetchpriority="high"></div>
     <div class="wrap">
-      <div class="label" data-load style="--d:200ms">Bufete de abogados · Doral, Florida</div>
       <h1 id="hero-title"><span class="line"><span style="--d:300ms">La ley, en palabras</span></span><span class="line"><span style="--d:450ms"><em>que usted entiende.</em></span></span></h1>
       <p class="lede" data-load style="--d:750ms">Disputas de seguros de propiedad, lesiones personales, derecho de familia y litigio comercial, explicados con claridad y defendidos hasta el final.</p>
       <div class="actions" data-load style="--d:900ms">
@@ -385,7 +387,9 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
 
   <section class="statement" id="firm" aria-label="La firma">
     <div class="wrap">
-      <p class="big" data-reveal>Una firma para los momentos que importan: la tormenta que dañó su casa, el accidente que cambió su año, la decisión familiar que nunca planeó. <em>Le explicamos la ley con claridad y lo acompañamos hasta el final.</em></p>
+      <p class="big" data-reveal>Un bufete de abogados para los momentos más importantes de la vida.</p>
+      <p class="sub" data-reveal style="--d:100ms">Ya sea que enfrente daños en su casa o negocio, un accidente que cambia su vida, una disputa comercial compleja o un asunto familiar inesperado, estamos aquí para brindarle la orientación, la defensa y la representación que usted merece.</p>
+      <p class="close" data-reveal style="--d:200ms">Le explicamos la ley con claridad, protegemos lo que más importa y lo acompañamos en cada paso del camino.</p>
       <div class="figures" data-stagger="120">
         <div data-reveal><div class="n" data-count="1000" data-suffix="+">1,000+</div><div class="t">Casos resueltos</div></div>
         <div data-reveal><div class="n" data-count="25" data-prefix="$" data-suffix="M+">$25M+</div><div class="t">Recuperados por nuestros abogados</div></div>
@@ -402,20 +406,21 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
         <div class="label" data-reveal>Áreas de práctica</div>
         <div>
           <h2 id="practice-title" data-reveal style="--d:100ms">Cómo podemos ayudarle</h2>
-          <p data-reveal style="--d:200ms">Tres áreas de práctica, un mismo compromiso: usted siempre sabrá en qué etapa está su caso y qué sigue.</p>
+          <p data-reveal style="--d:200ms">Cuatro áreas de práctica, un mismo compromiso: usted siempre sabrá en qué etapa está su caso y qué sigue.</p>
         </div>
       </div>
 
       <div class="tabs" role="tablist" aria-label="Áreas de práctica" data-stagger="100">
-        <button class="tab" type="button" role="tab" id="tab-property" aria-controls="panel-property" aria-selected="true" data-reveal><span class="no">01</span><span class="name"><span class="full">Propiedad y seguros</span><span class="short">Propiedad</span></span></button>
+        <button class="tab" type="button" role="tab" id="tab-property" aria-controls="panel-property" aria-selected="true" data-reveal><span class="no">01</span><span class="name"><span class="full">Seguros de propiedad</span><span class="short">Propiedad</span></span></button>
         <button class="tab" type="button" role="tab" id="tab-injury" aria-controls="panel-injury" aria-selected="false" tabindex="-1" data-reveal><span class="no">02</span><span class="name"><span class="full">Lesiones personales</span><span class="short">Lesiones</span></span></button>
         <button class="tab" type="button" role="tab" id="tab-family" aria-controls="panel-family" aria-selected="false" tabindex="-1" data-reveal><span class="no">03</span><span class="name"><span class="full">Derecho de familia</span><span class="short">Familia</span></span></button>
+        <button class="tab" type="button" role="tab" id="tab-commercial" aria-controls="panel-commercial" aria-selected="false" tabindex="-1" data-reveal><span class="no">04</span><span class="name"><span class="full">Litigio comercial</span><span class="short">Negocios</span></span></button>
       </div>
 
       <div class="panel" role="tabpanel" id="panel-property" aria-labelledby="tab-property" data-reveal="fade" style="--d:300ms">
         <div class="panel-copy">
           <div class="label">Lo más solicitado</div>
-          <h3>Reclamos de propiedad y seguros</h3>
+          <h3>Reclamos y litigios de seguros de propiedad</h3>
           <p>Reclamos por tormenta, agua, incendio y techo que fueron negados, demorados o mal pagados, para viviendas y negocios.</p>
           <ul class="cases">
             <li><a href="areas-de-practica/reclamos-de-propiedad/">Daños por huracán y viento<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
@@ -494,6 +499,26 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
         <div>
           <h2 id="team-title" data-reveal style="--d:100ms">Los socios</h2>
           <p data-reveal style="--d:200ms">Ambos están admitidos ante los tribunales estatales de Florida y los tribunales federales, y ambos hablan directamente con sus clientes.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-commercial" aria-labelledby="tab-commercial" hidden>
+        <div class="panel-copy">
+          <div class="label">Negocios</div>
+          <h3>Litigio comercial</h3>
+          <p>Disputas contractuales, entre socios y de negocios, resueltas mediante negociación cuando es posible y en los tribunales cuando es necesario.</p>
+          <ul class="cases">
+            <li><a href="areas-de-practica/litigio-comercial/">Incumplimiento de contrato<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="areas-de-practica/litigio-comercial/">Disputas entre socios y accionistas<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="areas-de-practica/litigio-comercial/">Disputas de arrendamiento comercial<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="areas-de-practica/litigio-comercial/">Disputas con aseguradoras comerciales<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li>
+          </ul>
+          <a class="more sweep nudge" href="areas-de-practica/litigio-comercial/">Ver litigio comercial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="panel-card">
+          <div class="ph"><img src="../assets/img/stock/glass-tower.webp" alt="" width="960" height="720" loading="lazy"></div>
+          <div>
+            <div class="label" style="color:#c3cdff;margin-bottom:24px">Para negocios y sus dueños</div>
+            <blockquote>Toda disputa de negocios comienza por entender lo que está en juego.</blockquote>
+            <a class="btn btn-ghost" href="#review">Revisión de su caso</a>
+          </div>
         </div>
       </div>
       <div class="people">
@@ -591,7 +616,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
           <label class="field"><span>Correo electrónico</span><input type="email" autocomplete="email"></label>
           <label class="field full"><span>Tipo de caso</span>
             <select id="case-type">
-              <option>Daños a la propiedad o reclamo de seguro</option>
+              <option>Reclamo de seguro por daños a la propiedad</option>
               <option>Accidente de auto</option>
               <option>Accidente de camión o de transporte por aplicación</option>
               <option>Resbalones y caídas</option>
@@ -617,9 +642,9 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
   <div class="wrap">
     <div>
       <a href="./" style="display:inline-block"><img src="../assets/img/logo-wordmark-white.png" alt="De La Noval, P.A., abogados, inicio" width="1000" height="171" loading="lazy"></a>
-      <p style="margin:0;max-width:340px;font-size:15px">La ley, en palabras que usted entiende. Al servicio de Doral, Miami-Dade y clientes en toda Florida.</p>
+      <p style="margin:0;max-width:340px;font-size:15px">La ley, en palabras que usted entiende. Al servicio de clientes en toda Florida.</p>
     </div>
-    <div><h3>Áreas</h3><ul><li><a class="sweep" href="areas-de-practica/reclamos-de-propiedad/">Propiedad y seguros</a></li><li><a class="sweep" href="areas-de-practica/lesiones-personales/">Lesiones personales</a></li><li><a class="sweep" href="areas-de-practica/derecho-de-familia/">Derecho de familia</a></li></ul></div>
+    <div><h3>Áreas</h3><ul><li><a class="sweep" href="areas-de-practica/reclamos-de-propiedad/">Seguros de propiedad</a></li><li><a class="sweep" href="areas-de-practica/lesiones-personales/">Lesiones personales</a></li><li><a class="sweep" href="areas-de-practica/derecho-de-familia/">Derecho de familia</a></li><li><a class="sweep" href="areas-de-practica/litigio-comercial/">Litigio comercial</a></li></ul></div>
     <div><h3>Abogados</h3><ul><li><a class="sweep" href="nosotros/lazaro-de-la-noval/">Lazaro De La Noval</a></li><li><a class="sweep" href="nosotros/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></li></ul></div>
     <div><h3>Firma</h3><ul><li><a class="sweep" href="nosotros/">Nosotros</a></li><li><a class="sweep" href="../blog/">Blog</a></li><li><a class="sweep" href="preguntas-frecuentes/">Preguntas frecuentes</a></li><li><a class="sweep" href="contacto/">Contacto</a></li></ul></div>
     <div class="legal">

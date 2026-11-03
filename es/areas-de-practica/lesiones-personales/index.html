@@ -310,7 +310,7 @@
   .progress span.on{background:var(--royal-tint);height:2px;margin-top:-.5px}
   .check .step{transition:opacity .35s var(--ease-out),transform .35s var(--ease-out)}
   .check .step.swap{opacity:0;transform:translate3d(0,10px,0)}
-  .check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
+  .check h3,.check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
   .check .choices{display:flex;flex-wrap:wrap;gap:14px}
   .check .choices .btn{min-width:140px}
   .check .result p{margin:-14px 0 30px;color:#dfe5f2;max-width:520px}
@@ -336,7 +336,7 @@
   .others{border-top:1px solid var(--line)}
   .others .wrap{padding-top:clamp(72px,8vw,112px);padding-bottom:clamp(72px,8vw,112px)}
   .others .label{color:var(--royal);margin-bottom:28px}
-  .others ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)}
+  .others ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)}
   .others a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-top:1px solid var(--line);text-decoration:none;font:500 clamp(24px,2.2vw,32px)/1.2 var(--serif);transition:color .4s}
   .others a:hover{color:var(--royal)}
   .others a[aria-current]{color:var(--muted);pointer-events:none}
@@ -380,7 +380,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
       <div class="has-sub"><a class="sweep" href="../../nosotros/">Nosotros<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="sub-menu"><a href="../../nosotros/">La firma</a><a href="../../nosotros/lazaro-de-la-noval/">Lazaro De La Noval</a><a href="../../nosotros/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></div></div>
       <div class="has-sub"><a class="sweep" href="../" aria-current="page">Áreas de práctica<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="sub-menu"><a href="../">Todas las áreas de práctica</a><a href="../reclamos-de-propiedad/">Propiedad y seguros</a><a href="./" aria-current="page">Lesiones personales</a><a href="../derecho-de-familia/">Derecho de familia</a></div></div>
+        <div class="sub-menu"><a href="../">Todas las áreas de práctica</a><a href="../reclamos-de-propiedad/">Seguros de propiedad</a><a href="./" aria-current="page">Lesiones personales</a><a href="../derecho-de-familia/">Derecho de familia</a><a href="../litigio-comercial/">Litigio comercial</a></div></div>
       <a class="sweep" href="../../../blog/">Blog</a>
       <a class="sweep" href="../../contacto/">Contacto</a>
       <a class="btn btn-ghost" href="#review">Revisión de su caso</a>
@@ -470,7 +470,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
   <section class="others" aria-label="Otras áreas de práctica">
     <div class="wrap">
       <div class="label">Áreas de práctica</div>
-      <ul><li><a href="../reclamos-de-propiedad/">Propiedad y seguros <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="./" aria-current="page">Lesiones personales <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="../derecho-de-familia/">Derecho de familia <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li></ul>
+      <ul><li><a href="../reclamos-de-propiedad/">Seguros de propiedad <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="./" aria-current="page">Lesiones personales <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="../derecho-de-familia/">Derecho de familia <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li><li><a href="../litigio-comercial/">Litigio comercial <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></li></ul>
     </div>
   </section>
 
@@ -480,7 +480,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
       <div class="intro">
         <div class="label" data-reveal>Consultas en español e inglés</div>
         <h2 id="review-title" data-reveal style="--d:100ms">Solicite una revisión de su caso.</h2>
-        <p data-reveal style="--d:200ms">Cuéntenos qué pasó. Un abogado revisará su información y lo llamará para explicarle sus opciones en palabras sencillas.</p>
+        <p data-reveal style="--d:200ms">Cuéntenos qué pasó. Un abogado revisará su información y lo llamará para explicarle sus opciones en palabras sencillas.<br><strong>Si no recuperamos, no cobramos.</strong></p>
         <dl class="reach" data-stagger="100">
           <div data-reveal><dt>Llame a la firma</dt><dd><a class="sweep" href="tel:+17862578847">(786) 257-8847</a></dd></div>
           <div data-reveal><dt>Oficina</dt><dd>8780 NW 18th Terrace, Doral, Florida 33172</dd></div>
@@ -497,7 +497,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
           <label class="field"><span>Correo electrónico</span><input type="email" autocomplete="email"></label>
           <label class="field full"><span>Tipo de caso</span>
             <select id="case-type">
-              <option>Daños a la propiedad o reclamo de seguro</option>
+              <option>Reclamo de seguro por daños a la propiedad</option>
               <option selected>Accidente de auto</option>
               <option>Accidente de camión o de transporte por aplicación</option>
               <option>Resbalones y caídas</option>
@@ -524,9 +524,9 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
   <div class="wrap">
     <div>
       <a href="../../" style="display:inline-block"><img src="../../../assets/img/logo-wordmark-white.png" alt="De La Noval, P.A., abogados, inicio" width="1000" height="171" loading="lazy"></a>
-      <p style="margin:0;max-width:340px;font-size:15px">La ley, en palabras que usted entiende. Al servicio de Doral, Miami-Dade y clientes en toda Florida.</p>
+      <p style="margin:0;max-width:340px;font-size:15px">La ley, en palabras que usted entiende. Al servicio de clientes en toda Florida.</p>
     </div>
-    <div><h3>Áreas</h3><ul><li><a class="sweep" href="../reclamos-de-propiedad/">Propiedad y seguros</a></li><li><a class="sweep" href="./">Lesiones personales</a></li><li><a class="sweep" href="../derecho-de-familia/">Derecho de familia</a></li></ul></div>
+    <div><h3>Áreas</h3><ul><li><a class="sweep" href="../reclamos-de-propiedad/">Seguros de propiedad</a></li><li><a class="sweep" href="./">Lesiones personales</a></li><li><a class="sweep" href="../derecho-de-familia/">Derecho de familia</a></li><li><a class="sweep" href="../litigio-comercial/">Litigio comercial</a></li></ul></div>
     <div><h3>Abogados</h3><ul><li><a class="sweep" href="../../nosotros/lazaro-de-la-noval/">Lazaro De La Noval</a></li><li><a class="sweep" href="../../nosotros/elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></li></ul></div>
     <div><h3>Firma</h3><ul><li><a class="sweep" href="../../nosotros/">Nosotros</a></li><li><a class="sweep" href="../../../blog/">Blog</a></li><li><a class="sweep" href="../../preguntas-frecuentes/">Preguntas frecuentes</a></li><li><a class="sweep" href="../../contacto/">Contacto</a></li></ul></div>
     <div class="legal">

@@ -12,7 +12,7 @@ ARROW = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="cur
 ARROW16 = ARROW.replace('width="18" height="18"', 'width="16" height="16"')
 CARET = '<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
 
-AREAS = [('property-damage', 'Property &amp; insurance'), ('personal-injury', 'Personal injury'), ('family-law', 'Family law')]
+AREAS = [('property-damage', 'Property insurance'), ('personal-injury', 'Personal injury'), ('family-law', 'Family law'), ('commercial-litigation', 'Commercial litigation')]
 PEOPLE = [('lazaro-de-la-noval', 'Lazaro De La Noval'), ('elizabeth-diaz-fernandez', 'Elizabeth Diaz Fernandez')]
 
 
@@ -66,7 +66,7 @@ def apply_shared(s, root, section=None, current=None, home=False):
 # ---------- update the pages that already exist ----------
 def update_existing():
     s = apply_shared(HOME, '../', home=True)
-    for slug, _ in AREAS:
+    for slug, _ in AREAS[:3]:
         key = {'property-damage': 'property', 'personal-injury': 'injury', 'family-law': 'family'}[slug]
         m = re.search(r'<div class="panel" role="tabpanel" id="panel-%s".*?<div class="panel-card">' % key, s, re.S)
         block = m.group(0)
@@ -130,7 +130,7 @@ PRACTICE_CSS = '''
   .progress span.on{background:var(--royal-tint);height:2px;margin-top:-.5px}
   .check .step{transition:opacity .35s var(--ease-out),transform .35s var(--ease-out)}
   .check .step.swap{opacity:0;transform:translate3d(0,10px,0)}
-  .check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
+  .check h3,.check h4{margin:0 0 32px;font:500 clamp(28px,2.7vw,40px)/1.15 var(--serif);max-width:620px}
   .check .choices{display:flex;flex-wrap:wrap;gap:14px}
   .check .choices .btn{min-width:140px}
   .check .result p{margin:-14px 0 30px;color:#dfe5f2;max-width:520px}
@@ -156,7 +156,7 @@ PRACTICE_CSS = '''
   .others{border-top:1px solid var(--line)}
   .others .wrap{padding-top:clamp(72px,8vw,112px);padding-bottom:clamp(72px,8vw,112px)}
   .others .label{color:var(--royal);margin-bottom:28px}
-  .others ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)}
+  .others ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)}
   .others a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-top:1px solid var(--line);text-decoration:none;font:500 clamp(24px,2.2vw,32px)/1.2 var(--serif);transition:color .4s}
   .others a:hover{color:var(--royal)}
   .others a[aria-current]{color:var(--muted);pointer-events:none}
@@ -266,13 +266,13 @@ def steps_section(title, steps, sub):
 # ---------- content ----------
 SUBS = {
  'property-damage': dict(
-    title='Property &amp; Insurance Claims', key='property', case='Property damage or insurance claim',
+    title='Property Insurance Claims and Litigation', key='property', case='Property damage insurance claim',
     desc='Denied, delayed or underpaid property insurance claim in Florida? De La Noval, P.A. represents homeowners and businesses in hurricane, water, roof and fire claims. Se habla español.',
-    h1a='Property &amp;', h1b='insurance <em>claims.</em>', photo=('storm-roof.webp', 1024, 683),
+    h1a='Property&nbsp;insurance', h1b='claims and <em>litigation.</em>', photo=('storm-roof.webp', 1024, 683),
     lede='When a storm, leak or fire damages your home or business and your insurer denies, delays or underpays the claim, we pursue what your policy promised.',
     big='Your home is likely your most important investment. <em>Your policy should protect it the way it promised.</em>',
-    body=['You buy insurance with the reasonable expectation that your insurer will pay a covered claim. Yet every year, residential and commercial claims that should be covered are denied, leaving owners wondering how they will pay for the repairs.',
-          'If your insurer is not honoring your policy, or you believe your claim was wrongfully denied, we can help you fight back with a strategy built around your policy and your property.',
+    body=['You buy insurance with the reasonable expectation that your insurer will pay a covered claim. Yet every year, residential and commercial claims that should be covered are denied or underpaid, leaving owners wondering how they will pay for the repairs.',
+          'If your insurer is not honoring your policy, or you believe your claim was wrongfully denied or underpaid, we can help you fight back with a strategy built around your policy and your property.',
           'Our founder began his career defending insurance companies. We know how a claim is reviewed from the inside, and where an insurer\'s position is weakest.'],
     types=[('Hurricane &amp; wind damage', 'Roof, window and structural damage after a named storm or severe wind.'),
            ('Water damage &amp; leaks', 'Burst pipes, plumbing failures, appliance leaks and the damage they leave behind.'),
@@ -322,6 +322,10 @@ SUBS = {
                  p='Elizabeth Diaz Fernandez prosecuted cases as a Miami-Dade Assistant State Attorney and has litigated hundreds of personal injury and property insurance cases.',
                  link=('about/elizabeth-diaz-fernandez/', 'Meet Elizabeth'))),
  'family-law': dict(
+    band=dict(label='Private consultations', h2='Start with a private conversation.',
+              p='Tell us a little about your situation. An attorney will call you, in English or Spanish, at a time that is safe and convenient for you.',
+              photo=('pen.webp', 1024, 769), card_label='Discreet &amp; confidential',
+              quote='Every family matter begins with a private conversation.', button='Request a private consultation'),
     title='Family Law', key=None, case='Family law',
     desc='Divorce, time-sharing, child support and alimony in Doral and Miami-Dade. De La Noval, P.A. handles family matters with discretion. Se habla español.',
     h1a='Family', h1b='<em>law.</em>', photo=('glass-tower.webp', 960, 720),
@@ -345,6 +349,36 @@ SUBS = {
          ('Is my consultation confidential?', 'Yes. What you share with us in a consultation is kept confidential.'),
          ('Can support or time-sharing be changed later?', 'Often, yes, when there has been a substantial change in circumstances. We can review whether a modification makes sense for you.')],
     feature=None),
+ 'commercial-litigation': dict(
+    title='Commercial Litigation', key=None, case='Business or commercial dispute',
+    desc='Business, contract and partnership disputes in Florida. De La Noval, P.A. represents businesses and their owners in commercial litigation in state and federal court. Se habla español.',
+    h1a='Commercial', h1b='<em>litigation.</em>', photo=('brickell-day.webp', 1600, 1060),
+    lede='Contract, partnership and business disputes, handled with a clear strategy, whether the right answer is a negotiated resolution or a day in court.',
+    big='A business dispute can put what you have built at risk. <em>We protect it with a clear plan.</em>',
+    body=['When a deal falls apart, a partner walks away or a customer refuses to pay, the cost goes beyond money. The dispute takes time and attention away from running your business.',
+          'We represent businesses and their owners in commercial disputes in Florida state and federal court, from the first demand letter through trial.',
+          'We start by understanding your business and your goals, then build a strategy that fits them, whether that means a negotiated resolution or litigation.'],
+    types=[('Breach of contract', 'Agreements that were not honored, from supply and service contracts to purchase agreements.'),
+           ('Partnership &amp; shareholder disputes', 'Conflicts between owners over management, money or the future of the company.'),
+           ('Fraud &amp; misrepresentation', 'Claims that a business was misled into a deal or a payment.'),
+           ('Commercial lease disputes', 'Disagreements between landlords and tenants over commercial property.'),
+           ('Unpaid invoices &amp; debts', 'Money owed between businesses for goods and services delivered.'),
+           ('Commercial insurance disputes', 'Claims a business\'s own insurer has denied, delayed or underpaid.')],
+    band=dict(label='Business disputes', h2='Start with a conversation about your business.',
+              p='Tell us what happened and what is at stake. An attorney will call you to review your options, in English or Spanish.',
+              photo=('glass-tower.webp', 960, 720), card_label='For businesses &amp; owners',
+              quote='Every business dispute begins with understanding what is at stake.', button='Request a case review'),
+    steps=[('Case review', 'We review the contracts, communications and facts, then explain your options in plain language.'),
+           ('Investigation', 'We gather the documents, records and evidence the case needs.'),
+           ('Negotiation &amp; mediation', 'Many business disputes resolve through negotiation or mediation. We prepare you for both.'),
+           ('Litigation', 'When a fair resolution does not come, we are prepared to take your case to court.')],
+    faq=[('Should I talk to a lawyer before a dispute becomes a lawsuit?', 'Often, yes. Early advice can help you protect your position, preserve evidence and sometimes resolve the dispute before it reaches court.'),
+         ('What should I gather before a consultation?', 'The contract or agreement, invoices, emails and messages about the dispute, and any demand letters you have sent or received.'),
+         ('Can a business dispute be resolved without going to court?', 'Many can, through negotiation or mediation. Some contracts also require mediation or arbitration before a lawsuit, so we start by reviewing your agreement.'),
+         ('Do you represent individuals or only companies?', 'Both. We represent businesses of every size, as well as owners, partners and individuals in disputes with a business.')],
+    feature=dict(photo='lazaro-seated.webp', label='Your attorney', h2='Experience on both sides of a dispute.',
+                 p='Lazaro De La Noval began his career defending insurance companies. Since 2016 he has represented individuals and businesses in insurance and contract disputes.',
+                 link=('about/lazaro-de-la-noval/', 'Meet Lazaro'))),
 }
 
 ORDER = [s for s, _ in AREAS]
@@ -395,19 +429,20 @@ def build_sub(slug):
 
 '''
     else:
+        b = d['band']
         m += f'''  <section class="checkband" aria-labelledby="check-title">
     <div class="wrap">
       <div class="copy">
-        <div class="label" data-reveal>Private consultations</div>
-        <h2 id="check-title" data-reveal style="--d:100ms">Start with a private conversation.</h2>
-        <p data-reveal style="--d:200ms">Tell us a little about your situation. An attorney will call you, in English or Spanish, at a time that is safe and convenient for you.</p>
+        <div class="label" data-reveal>{b['label']}</div>
+        <h2 id="check-title" data-reveal style="--d:100ms">{b['h2']}</h2>
+        <p data-reveal style="--d:200ms">{b['p']}</p>
       </div>
       <div class="panel-card" data-reveal="fade" style="--d:250ms">
-        <div class="ph"><img src="{root}assets/img/stock/pen.webp" alt="" width="1024" height="769" loading="lazy"></div>
+        <div class="ph"><img src="{root}assets/img/stock/{b['photo'][0]}" alt="" width="{b['photo'][1]}" height="{b['photo'][2]}" loading="lazy"></div>
         <div>
-          <div class="label" style="color:#c3cdff;margin-bottom:24px">Discreet &amp; confidential</div>
-          <blockquote>Every family matter begins with a private conversation.</blockquote>
-          <a class="btn btn-ghost" href="#review">Request a private consultation</a>
+          <div class="label" style="color:#c3cdff;margin-bottom:24px">{b['card_label']}</div>
+          <blockquote>{b['quote']}</blockquote>
+          <a class="btn btn-ghost" href="#review">{b['button']}</a>
         </div>
       </div>
     </div>
@@ -452,6 +487,8 @@ def build_sub(slug):
 '''
     out = page(root, d['title'], d['desc'], photo, m, 'practice', here, check=bool(d['key']))
     out = out.replace('<option>%s</option>' % d['case'], '<option selected>%s</option>' % d['case'], 1)
+    if d['key']:  # property insurance and personal injury are contingency cases (Lazaro, 2026-11-02)
+        out = rep(out, 'call to explain your options in plain language.</p>', 'call to explain your options in plain language.<br><strong>No recovery, no fee.</strong></p>')
     os.makedirs('practice-areas/' + slug, exist_ok=True)
     open('practice-areas/%s/index.html' % slug, 'w', encoding='utf-8', newline='\n').write(out)
     print('wrote', slug)
@@ -460,11 +497,12 @@ def build_sub(slug):
 def build_overview():
     root = '../'; here = root + 'practice-areas/'
     m = hero(root, [(root + 'homepage/', 'Home'), 'Practice areas'], 'How we', '<em>can help.</em>',
-             'Three practice areas, one standard: you will always know where your case stands and what happens next.', 'skyline-storm.webp', 1024, 511)
+             'Four practice areas, one standard: you will always know where your case stands and what happens next.', 'skyline-storm.webp', 1024, 511)
     rows = [
         ('property-damage', 'storm-roof.webp', 1024, 683, 'Storm, water, fire and roof claims that were denied, delayed or underpaid, for homes and businesses.', ['Hurricane &amp; wind damage', 'Water damage &amp; leaks', 'Roof, fire &amp; smoke claims', 'Commercial property']),
         ('personal-injury', 'brickell-night.webp', 1024, 768, 'Car accidents, slips and falls and other injuries, pursued for the full compensation the law allows.', ['Car, truck &amp; rideshare accidents', 'Pedestrian &amp; bicycle accidents', 'Slip and fall', 'Premises injuries']),
         ('family-law', 'pen.webp', 1024, 769, 'Divorce, time-sharing and support, handled with discretion, whether the answer is agreement or court.', ['Divorce', 'Parenting plans &amp; time-sharing', 'Child support &amp; alimony', 'Modifications']),
+        ('commercial-litigation', 'brickell-day.webp', 1600, 1060, 'Contract, partnership and business disputes, resolved through negotiation when possible and litigation when necessary.', ['Breach of contract', 'Partnership &amp; shareholder disputes', 'Commercial lease disputes', 'Commercial insurance disputes']),
     ]
     for i, (slug, photo, w, h, p, cases) in enumerate(rows):
         name = dict(AREAS)[slug]; href = root + 'practice-areas/%s/' % slug
@@ -487,7 +525,7 @@ def build_overview():
         ('Negotiation', 'We present your case to the other side and press for a fair result.'),
         ('Court, if needed', 'If a fair result does not come, we are prepared to take your case to court.')],
         'The steps are similar in every practice area, and you will know where your case stands at each one.')
-    out = page(root, 'Practice Areas', 'De La Noval, P.A. handles property insurance claims, personal injury and family law in Doral, Miami-Dade and across Florida. Se habla español.', 'skyline-storm.webp', m, 'practice', here)
+    out = page(root, 'Practice Areas', 'De La Noval, P.A. handles property insurance claims, personal injury, family law and commercial litigation in Doral, Miami-Dade and across Florida. Se habla español.', 'skyline-storm.webp', m, 'practice', here)
     os.makedirs('practice-areas', exist_ok=True)
     open('practice-areas/index.html', 'w', encoding='utf-8', newline='\n').write(out)
     print('wrote overview')
@@ -513,6 +551,7 @@ REVIEW_BG = {
     'practice-areas/property-damage': 'blue-roof-keys.webp',
     'practice-areas/personal-injury': 'i95-aerial.webp',
     'practice-areas/family-law': 'biscayne-sunset.webp',
+    'practice-areas/commercial-litigation': 'brickell-golden.webp',
     'contact': 'brickell-day.webp',
     'faqs': 'everglades-storm.webp',
     'blog': 'brickell-day.webp',

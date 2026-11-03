@@ -318,6 +318,13 @@
   .steps p{margin:0;font-size:16px;color:var(--slate);max-width:640px}
   .steps li.now h3{color:var(--royal)}
   @media (max-width:640px){.steps li{grid-template-columns:1fr;gap:6px}.steps .when{padding-top:0}}
+  .admit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(32px,5vw,96px)}
+  .admit h3{margin:0 0 8px;padding-bottom:20px;border-bottom:1px solid #c9d2e6;font:400 12px/1.4 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--royal)}
+  .admit ul{list-style:none;margin:0;padding:0}
+  .admit li{padding:22px 0;border-bottom:1px solid #c9d2e6}
+  .admit .n{display:block;font:500 clamp(24px,2vw,30px)/1.2 var(--serif);color:var(--navy)}
+  .admit .d{display:block;margin-top:6px;font-size:16px;color:var(--slate)}
+  @media (max-width:760px){.admit{grid-template-columns:1fr;row-gap:48px}}
 
   .said .wrap{padding-top:clamp(96px,11vw,152px);padding-bottom:clamp(96px,11vw,152px)}
   .said .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px clamp(24px,3vw,48px)}
@@ -360,7 +367,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
       <div class="has-sub"><a class="sweep" href="../" aria-current="page">Nosotros<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="sub-menu"><a href="../">La firma</a><a href="./" aria-current="page">Lazaro De La Noval</a><a href="../elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></div></div>
       <div class="has-sub"><a class="sweep" href="../../areas-de-practica/">Áreas de práctica<svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-        <div class="sub-menu"><a href="../../areas-de-practica/">Todas las áreas de práctica</a><a href="../../areas-de-practica/reclamos-de-propiedad/">Propiedad y seguros</a><a href="../../areas-de-practica/lesiones-personales/">Lesiones personales</a><a href="../../areas-de-practica/derecho-de-familia/">Derecho de familia</a></div></div>
+        <div class="sub-menu"><a href="../../areas-de-practica/">Todas las áreas de práctica</a><a href="../../areas-de-practica/reclamos-de-propiedad/">Seguros de propiedad</a><a href="../../areas-de-practica/lesiones-personales/">Lesiones personales</a><a href="../../areas-de-practica/derecho-de-familia/">Derecho de familia</a><a href="../../areas-de-practica/litigio-comercial/">Litigio comercial</a></div></div>
       <a class="sweep" href="../../../blog/">Blog</a>
       <a class="sweep" href="../../contacto/">Contacto</a>
       <a class="btn btn-ghost" href="#review">Revisión de su caso</a>
@@ -387,10 +394,6 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
     </div>
   </section>
 
-  <section class="facts" aria-label="En resumen">
-    <div class="wrap"><dl data-stagger="100"><div data-reveal><dt>Cargo</dt><dd>Fundador y socio director</dd></div><div data-reveal><dt>Enfoque</dt><dd>Reclamos de seguros de propiedad, lesiones personales</dd></div><div data-reveal><dt>Admisión</dt><dd>Florida; Tribunal de Distrito de EE. UU., Distrito Sur de Florida</dd></div><div data-reveal><dt>Formación</dt><dd>J.D., St. Thomas University</dd></div></dl></div>
-  </section>
-
   <section class="bio" aria-labelledby="bio-label">
     <div class="wrap">
       <aside data-reveal>
@@ -401,13 +404,13 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
     </div>
   </section>
 
-  <section class="path" aria-labelledby="path-title">
+  <section class="path" aria-labelledby="creds-title">
     <div class="wrap">
       <div class="sec-head">
-        <div class="label" data-reveal>Trayectoria</div>
-        <h2 id="path-title" data-reveal style="--d:100ms">El camino hasta aquí</h2>
+        <div class="label" data-reveal>Credenciales</div>
+        <h2 id="creds-title" data-reveal style="--d:100ms">Admisiones y formación</h2>
       </div>
-      <ol class="steps" data-stagger="90"><li data-reveal><span class="when label">2013</span><div><h3>Florida International University</h3><p>Licenciatura en Justicia Penal, con especialización secundaria en Sociología.</p></div></li><li data-reveal><span class="when label">Facultad de derecho</span><div><h3>Oficina del Defensor Público de Miami-Dade</h3><p>Pasante legal certificado, representando a clientes en cada etapa de un caso.</p></div></li><li data-reveal><span class="when label">2015</span><div><h3>Vida Legal Assistance, Inc.</h3><p>Pasante, ayudando a proteger los derechos de inmigrantes sobrevivientes de violencia.</p></div></li><li data-reveal><span class="when label">Facultad de derecho</span><div><h3>St. Thomas University College of Law</h3><p>Juris Doctor (título de abogado).</p></div></li><li data-reveal><span class="when label">Inicios</span><div><h3>Abogado de defensa de aseguradoras</h3><p>Defendió a compañías de seguros y aprendió desde adentro cómo las aseguradoras manejan un reclamo.</p></div></li><li class="now" data-reveal><span class="when label">Hoy</span><div><h3>Fundador y socio director, De La Noval, P.A.</h3><p>Representa a propietarios, negocios y personas lesionadas en toda Florida.</p></div></li></ol>
+      <div class="admit" data-stagger="120"><div data-reveal><h3>Admisiones</h3><ul><li><span class="n">Colegio de Abogados de Florida (The Florida Bar)</span></li><li><span class="n">Tribunal de Distrito de EE. UU.</span><span class="d">Distrito Sur de Florida</span></li></ul></div><div data-reveal><h3>Formación</h3><ul><li><span class="n">St. Thomas University College of Law</span><span class="d">Juris Doctor (título de abogado)</span></li><li><span class="n">Florida International University</span><span class="d">Licenciatura en Justicia Penal, con especialización secundaria en Sociología</span></li></ul></div></div>
     </div>
   </section>
 
@@ -458,7 +461,7 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
           <label class="field"><span>Correo electrónico</span><input type="email" autocomplete="email"></label>
           <label class="field full"><span>Tipo de caso</span>
             <select id="case-type">
-              <option selected>Daños a la propiedad o reclamo de seguro</option>
+              <option selected>Reclamo de seguro por daños a la propiedad</option>
               <option>Accidente de auto</option>
               <option>Accidente de camión o de transporte por aplicación</option>
               <option>Resbalones y caídas</option>
@@ -484,9 +487,9 @@ nav.main>a,nav.main .has-sub>a{white-space:nowrap}
   <div class="wrap">
     <div>
       <a href="../../" style="display:inline-block"><img src="../../../assets/img/logo-wordmark-white.png" alt="De La Noval, P.A., abogados, inicio" width="1000" height="171" loading="lazy"></a>
-      <p style="margin:0;max-width:340px;font-size:15px">La ley, en palabras que usted entiende. Al servicio de Doral, Miami-Dade y clientes en toda Florida.</p>
+      <p style="margin:0;max-width:340px;font-size:15px">La ley, en palabras que usted entiende. Al servicio de clientes en toda Florida.</p>
     </div>
-    <div><h3>Áreas</h3><ul><li><a class="sweep" href="../../areas-de-practica/reclamos-de-propiedad/">Propiedad y seguros</a></li><li><a class="sweep" href="../../areas-de-practica/lesiones-personales/">Lesiones personales</a></li><li><a class="sweep" href="../../areas-de-practica/derecho-de-familia/">Derecho de familia</a></li></ul></div>
+    <div><h3>Áreas</h3><ul><li><a class="sweep" href="../../areas-de-practica/reclamos-de-propiedad/">Seguros de propiedad</a></li><li><a class="sweep" href="../../areas-de-practica/lesiones-personales/">Lesiones personales</a></li><li><a class="sweep" href="../../areas-de-practica/derecho-de-familia/">Derecho de familia</a></li><li><a class="sweep" href="../../areas-de-practica/litigio-comercial/">Litigio comercial</a></li></ul></div>
     <div><h3>Abogados</h3><ul><li><a class="sweep" href="./">Lazaro De La Noval</a></li><li><a class="sweep" href="../elizabeth-diaz-fernandez/">Elizabeth Diaz Fernandez</a></li></ul></div>
     <div><h3>Firma</h3><ul><li><a class="sweep" href="../">Nosotros</a></li><li><a class="sweep" href="../../../blog/">Blog</a></li><li><a class="sweep" href="../../preguntas-frecuentes/">Preguntas frecuentes</a></li><li><a class="sweep" href="../../contacto/">Contacto</a></li></ul></div>
     <div class="legal">

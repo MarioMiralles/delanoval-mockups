@@ -135,12 +135,12 @@ FAQ_CSS = '''
 '''
 
 GENERAL_FAQ = [
-    ('How much does a consultation cost?', '[Fee policy to confirm with the firm.] Call us or request a case review, and we will explain how fees work for your type of case before you decide anything.'),
+    ('How much does a consultation cost?', 'Consultation fees depend on the type of legal matter. We offer free initial consultations for personal injury and property insurance claims. For other legal matters, any applicable consultation fee will be explained before your appointment. Contact our office to discuss your situation and learn how we can help.'),
     ('Do you speak Spanish?', 'Sí. Every consultation is available in English or Spanish, and we can work with you in either language for the life of your case.'),
     ('Do you only handle cases in Miami-Dade?', 'No. Our office is in Doral, and we represent clients throughout Florida in state court and federal court.'),
     ('What should I bring to my first consultation?', 'Anything related to your case: insurance policies and letters, photos, medical records, police reports, court papers and a list of your questions. If you do not have everything, call anyway.'),
-    ('How will I know what is happening with my case?', 'You will speak with the attorney handling your case, and we keep you updated at every step, so you always know where things stand and what happens next.'),
-    ('Does contacting the firm make me a client?', 'No. Calling, emailing or sending a form does not create an attorney-client relationship. Representation begins only once we agree to it in writing.'),
+    ('How will I know what is happening with my case?', 'We believe communication is essential to effective legal representation. Our team is committed to keeping you informed throughout every stage of your case, explaining important developments, and making sure you understand your options. Whether by phone, email, or direct communication with your attorney, you\'ll have access to our team whenever you have questions or need an update. Our goal is simple: to ensure you never feel left in the dark about your case.'),
+    ('Does contacting the firm make me a client?', 'No. Contacting our firm, submitting an inquiry, or scheduling a consultation does not automatically establish an attorney-client relationship. Representation begins only after our firm has agreed to accept your case and a formal engagement agreement has been executed. Until then, please do not send confidential or sensitive information unless specifically requested by our office.'),
 ]
 
 
@@ -170,7 +170,7 @@ def build_faqs():
   </section>
 
 '''
-    out = page(root, 'FAQs', 'Answers to common questions about property insurance claims, personal injury, family law and working with De La Noval, P.A. Se habla español.',
+    out = page(root, 'FAQs', 'Answers to common questions about property insurance claims, personal injury, family law, commercial litigation and working with De La Noval, P.A. Se habla español.',
                'library.webp', m, None, root + 'faqs/', extra_css=FAQ_CSS)
     os.makedirs('faqs', exist_ok=True)
     open('faqs/index.html', 'w', encoding='utf-8', newline='\n').write(out)
@@ -384,7 +384,7 @@ def build_article():
     out = page(root, 'After the Storm: What to Document Before You Call Your Insurer',
                'A Florida property insurance attorney explains what to photograph, save and write down after storm damage, before you call your insurance company.',
                g[4], m, 'blog', root + 'blog/', extra_css=ARTICLE_CSS)
-    out = out.replace('<option>Property damage or insurance claim</option>', '<option selected>Property damage or insurance claim</option>', 1)
+    out = out.replace('<option>Property damage insurance claim</option>', '<option selected>Property damage insurance claim</option>', 1)
     os.makedirs('blog/after-the-storm', exist_ok=True)
     open('blog/after-the-storm/index.html', 'w', encoding='utf-8', newline='\n').write(out)
     print('wrote article')
